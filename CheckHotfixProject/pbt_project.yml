@@ -1,6 +1,6 @@
 name: CheckHotfixProject
 description: ''
-version: '4'
+version: '6'
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
