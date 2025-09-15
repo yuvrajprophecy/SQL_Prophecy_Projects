@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "pip3__limited_results"
+  tags:
+  - "prophecy_temp"

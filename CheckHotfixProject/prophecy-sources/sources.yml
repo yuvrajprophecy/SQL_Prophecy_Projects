@@ -1,0 +1,64 @@
+---
+version: 2
+sources:
+- name: "qa_team.qa_database"
+  database: "qa_team"
+  schema: "qa_database"
+  tables:
+  - name: "all_type_csv"
+    columns:
+    - name: "c_tinyint"
+      dataType:
+        type: "Bigint"
+    - name: "c_smallint"
+      dataType:
+        type: "Bigint"
+    - name: "c_int"
+      dataType:
+        type: "Bigint"
+    - name: "c_float"
+      dataType:
+        type: "Double"
+    - name: "c_double"
+      dataType:
+        type: "Double"
+    - name: "c_decimal"
+      dataType:
+        type: "Double"
+    - name: "c_boolean"
+      dataType:
+        type: "Boolean"
+    - name: "c_null"
+      dataType:
+        type: "String"
+    - name: "c_emptystring"
+      dataType:
+        type: "String"
+    - name: "c_date"
+      dataType:
+        type: "Date"
+    - name: "c_timestamp"
+      dataType:
+        type: "Timestamp"
+    - name: "c_interval"
+      dataType:
+        type: "String"
+    - name: "c_time"
+      dataType:
+        type: "Timestamp"
+    - name: "c_array"
+      dataType:
+        type: "String"
+    - name: "c_struct"
+      dataType:
+        type: "String"
+    - name: "c_array_of_struct"
+      dataType:
+        type: "String"
+    - name: "c_struct_of_array"
+      dataType:
+        type: "String"
+    - name: "c_complex_struct"
+      dataType:
+        type: "String"
+    type: "table"

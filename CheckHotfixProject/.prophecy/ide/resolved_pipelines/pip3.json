@@ -1,0 +1,110 @@
+{
+  "id" : "pip3",
+  "metainfo" : {
+    "label" : "pip3",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "6H-A16WuOC2w4quQmGP6N$$3TaICKy_3a7Wt7Bcm46k2" : {
+      "id" : "6H-A16WuOC2w4quQmGP6N$$3TaICKy_3a7Wt7Bcm46k2",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pip3__limited_results",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pip3__limited_results"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "limited_results_gIwU9pUmRUZphPArAuMXX$$J_zi9xZYaMZIZp_6_khKQ", "6H-A16WuOC2w4quQmGP6N$$3TaICKy_3a7Wt7Bcm46k2", "xFrXL9dMgzQzrkfyjXYeX$$J8fUPH9MnT97HreaYrT0I", "MFnpZ_jTfkW23ER5iHEmv$$7-0yCQMjOC07H1Rfqx1EV" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pip3__limited_results_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "pip3__limited_results_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "99btPnFPZZM9DpEoDqhWD$$9lWwPfLaeaEbde0ozKtf7" : {
+      "id" : "99btPnFPZZM9DpEoDqhWD$$9lWwPfLaeaEbde0ozKtf7",
+      "component" : "Email",
+      "metadata" : {
+        "label" : "email_hotfix_notification",
+        "x" : 20,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "body" : "",
+        "subject" : "Hotfix pip3",
+        "includeData" : true,
+        "fileName" : "test.csv",
+        "to" : [ "yuvraj@prophecy.io" ],
+        "connection" : {
+          "kind" : "smtp",
+          "properties" : {
+            "id" : "smtp"
+          },
+          "type" : "connector"
+        },
+        "fileFormat" : "csv",
+        "hasTemplate" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4kkf_jo-VAaraqz1kpQzK$$ul6phxWOis6hQOLlOM6hG",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "col1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_6H-A16WuOC2w4quQmGP6N$$3TaICKy_3a7Wt7Bcm46k2_4kkf_jo-VAaraqz1kpQzK$$ul6phxWOis6hQOLlOM6hG",
+    "source" : "6H-A16WuOC2w4quQmGP6N$$3TaICKy_3a7Wt7Bcm46k2",
+    "sourcePort" : "pip3__limited_results_out_0",
+    "target" : "99btPnFPZZM9DpEoDqhWD$$9lWwPfLaeaEbde0ozKtf7",
+    "targetPort" : "4kkf_jo-VAaraqz1kpQzK$$ul6phxWOis6hQOLlOM6hG"
+  } ],
+  "component" : "Pipeline"
+}

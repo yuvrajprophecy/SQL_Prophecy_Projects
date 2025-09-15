@@ -1,0 +1,167 @@
+name: CheckHotfixProject
+description: ''
+version: 0.0.1
+author: abhisheks+e2etests@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-09-15 09:53:44'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2025-09-15 09:53:59'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
+    createdAt: '2025-09-15 09:54:16'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/qa_team_qa_database:
+    name: qa_team.qa_database
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-09-15 09:56:11'
+    tables:
+    - name: all_type_csv
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: c_tinyint
+          dataType:
+            type: Bigint
+        - name: c_smallint
+          dataType:
+            type: Bigint
+        - name: c_int
+          dataType:
+            type: Bigint
+        - name: c_float
+          dataType:
+            type: Double
+        - name: c_double
+          dataType:
+            type: Double
+        - name: c_decimal
+          dataType:
+            type: Double
+        - name: c_boolean
+          dataType:
+            type: Boolean
+        - name: c_null
+          dataType:
+            type: String
+        - name: c_emptystring
+          dataType:
+            type: String
+        - name: c_date
+          dataType:
+            type: Date
+        - name: c_timestamp
+          dataType:
+            type: Timestamp
+        - name: c_interval
+          dataType:
+            type: String
+        - name: c_time
+          dataType:
+            type: Timestamp
+        - name: c_array
+          dataType:
+            type: String
+        - name: c_struct
+          dataType:
+            type: String
+        - name: c_array_of_struct
+          dataType:
+            type: String
+        - name: c_struct_of_array
+          dataType:
+            type: String
+        - name: c_complex_struct
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-09-15 09:56:11'
+      tableType: table
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: abhisheks+e2etests@prophecy.io
+  createdAt: '2025-09-15 09:53:44'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: false
+pipelineConfigurations: {}
+projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/pip1:
+    name: pip1
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/pip1/schema.yml
+    - models/pip1/pip1__limited_results.sql
+    - .prophecy/ide/pipelines/pip1.json
+    - pipelines/pip1.py
+    createdAt: '2025-09-15 09:54:16'
+  .prophecy/metadata/sqlorchestratorpipeline/pip2:
+    name: pip2
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/pip2/pip2__limited_results.sql
+    - models/pip2/schema.yml
+    - .prophecy/ide/pipelines/pip2.json
+    - pipelines/pip2.py
+    createdAt: '2025-09-15 10:04:28'
+  .prophecy/metadata/sqlorchestratorpipeline/pip3:
+    name: pip3
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/pip3/schema.yml
+    - models/pip3/pip3__limited_results.sql
+    - .prophecy/ide/pipelines/pip3.json
+    - pipelines/pip3.py
+    createdAt: '2025-09-15 10:06:11'
+sqlBusinessApps: {}

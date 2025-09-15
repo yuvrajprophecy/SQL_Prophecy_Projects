@@ -1,0 +1,127 @@
+{
+  "id" : "pip2",
+  "metainfo" : {
+    "label" : "pip2",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "config1",
+          "kind" : {
+            "type" : "string",
+            "value" : "'Pipeline 2 Config 1 Original'"
+          }
+        }, {
+          "name" : "config2",
+          "kind" : {
+            "type" : "string",
+            "value" : "'Pipeline 2 Config 2 Original'"
+          }
+        } ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "AuyQf7Ub5h4Y_bWdxBQbY$$T3Exo7nitS8LOH2388j_w" : {
+      "id" : "AuyQf7Ub5h4Y_bWdxBQbY$$T3Exo7nitS8LOH2388j_w",
+      "component" : "Email",
+      "metadata" : {
+        "label" : "email_hotfix_notification",
+        "x" : -40,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "body" : "",
+        "subject" : "Hotfix pip2",
+        "includeData" : true,
+        "fileName" : "test.csv",
+        "to" : [ "yuvraj@prophecy.io" ],
+        "connection" : {
+          "kind" : "smtp",
+          "properties" : {
+            "id" : "smtp"
+          },
+          "type" : "connector"
+        },
+        "fileFormat" : "csv",
+        "hasTemplate" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "FdsjPjUCdnv-TJBe2W6tL$$waKaex2WO-vNkJ_3rL-so",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "col1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "col2",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "EDGyEW7TcEpdTgd0fvkbf$$Ql6mQphqDrobcbf6udVpp" : {
+      "id" : "EDGyEW7TcEpdTgd0fvkbf$$Ql6mQphqDrobcbf6udVpp",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pip2__limited_results",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pip2__limited_results"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "limited_results_C8CUmsf6bNok22D39IeXd$$ekiM7F6UVxsUDZnnZOPrg", "EDGyEW7TcEpdTgd0fvkbf$$Ql6mQphqDrobcbf6udVpp", "2AYf6G-jz_Nll1abxdOB6$$Bu6ngz0RRmeEu3yAy9RcO", "YxQZk81fliJj33_Dl56aZ$$XjookhL8ezem29qP0T8no" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pip2__limited_results_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "pip2__limited_results_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_EDGyEW7TcEpdTgd0fvkbf$$Ql6mQphqDrobcbf6udVpp_FdsjPjUCdnv-TJBe2W6tL$$waKaex2WO-vNkJ_3rL-so",
+    "source" : "EDGyEW7TcEpdTgd0fvkbf$$Ql6mQphqDrobcbf6udVpp",
+    "sourcePort" : "pip2__limited_results_out_0",
+    "target" : "AuyQf7Ub5h4Y_bWdxBQbY$$T3Exo7nitS8LOH2388j_w",
+    "targetPort" : "FdsjPjUCdnv-TJBe2W6tL$$waKaex2WO-vNkJ_3rL-so"
+  } ],
+  "component" : "Pipeline"
+}
