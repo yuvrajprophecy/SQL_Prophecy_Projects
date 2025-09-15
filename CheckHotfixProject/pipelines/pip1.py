@@ -6,7 +6,7 @@ with DAG(Config = Config, Schedule = Schedule, SensorSchedule = SensorSchedule):
     email_hotfix_notification = Task(
         task_id = "email_hotfix_notification", 
         component = "Email", 
-        body = "test bb", 
+        body = "test bb2", 
         subject = "Hotfix pip1", 
         includeData = True, 
         fileName = "test.csv", 
