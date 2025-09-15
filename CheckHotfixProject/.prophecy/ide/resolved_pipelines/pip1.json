@@ -23,13 +23,13 @@
       }
     },
     "schedule" : {
-      "cron" : "* 0 2 * * * *",
-      "timeZone" : "GMT",
+      "cron" : "0 0/2 * * * ? *",
+      "timeZone" : "Asia/Kolkata",
       "emailOnSuccess" : false,
       "emailOnFailure" : false,
       "emailOnStart" : false,
-      "emails" : [ "email@gmail.com" ],
-      "enabled" : false
+      "emails" : [ ],
+      "enabled" : true
     },
     "sensorSchedule" : {
       "enabled" : false,
