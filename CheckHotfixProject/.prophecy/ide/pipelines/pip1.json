@@ -49,7 +49,7 @@
         "phase" : 0
       },
       "properties" : {
-        "body" : "test bb2",
+        "body" : "test bb6",
         "subject" : "Hotfix pip1",
         "includeData" : true,
         "fileName" : "test.csv",
