@@ -1,5 +1,5 @@
 Config = {"config1" : "'Pipeline 2 Config 1 Original'", "config2" : "'Pipeline 2 Config 2 Original'"}
-Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@gmail.com"], enabled = False)
+Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "Asia/Kolkata", enabled = False)
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Config = Config, Schedule = Schedule, SensorSchedule = SensorSchedule):

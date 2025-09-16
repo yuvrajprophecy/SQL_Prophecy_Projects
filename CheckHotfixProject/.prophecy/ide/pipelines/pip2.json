@@ -24,11 +24,11 @@
     },
     "schedule" : {
       "cron" : "* 0 2 * * * *",
-      "timeZone" : "GMT",
+      "timeZone" : "Asia/Kolkata",
       "emailOnSuccess" : false,
       "emailOnFailure" : false,
       "emailOnStart" : false,
-      "emails" : [ "email@gmail.com" ],
+      "emails" : [ ],
       "enabled" : false
     },
     "sensorSchedule" : {

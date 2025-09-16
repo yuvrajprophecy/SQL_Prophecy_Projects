@@ -23,13 +23,13 @@
       }
     },
     "schedule" : {
-      "cron" : "0 0/2 * * * ? *",
+      "cron" : "0 0/3 * * * ? *",
       "timeZone" : "Asia/Kolkata",
       "emailOnSuccess" : false,
       "emailOnFailure" : false,
       "emailOnStart" : false,
       "emails" : [ ],
-      "enabled" : true
+      "enabled" : false
     },
     "sensorSchedule" : {
       "enabled" : false,
@@ -88,120 +88,52 @@
         "isCustomOutputSchema" : false
       }
     },
-    "0ZseTRUBJOZkWpWmlqKoc$$DgpeBJWNleNcvCYzG2zAr" : {
-      "id" : "0ZseTRUBJOZkWpWmlqKoc$$DgpeBJWNleNcvCYzG2zAr",
-      "component" : "Dataset",
+    "7i2EX_HNva_dpKJYuYFYn$$tgHZ-sUEE-kHKtWh0bsH5" : {
+      "id" : "7i2EX_HNva_dpKJYuYFYn$$tgHZ-sUEE-kHKtWh0bsH5",
+      "component" : "Limit",
       "metadata" : {
-        "label" : "all_type_csv",
-        "x" : -560,
+        "label" : "limited_results",
+        "x" : -200,
         "y" : -200,
         "phase" : 0
       },
       "properties" : {
-        "table" : {
-          "name" : "all_type_csv",
-          "sourceType" : "Source",
-          "sourceName" : "qa_team.qa_database",
-          "alias" : ""
+        "limit" : {
+          "expression" : "1"
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "zLiNKVbxZ9lDLMKRpfNyE$$3BrMejTWHmLGmr78H4LAm",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "a8IPav3XU1p2L5K7WH4Gn$$ez7MKLDUT9aIuplQHlo2O",
+          "id" : "Yvtx1Y9edJepgGS_R-qLr$$eySCBiMKESkbpq15XZm0h",
           "schema" : {
             "entityType" : "",
-            "providerType" : "databricks",
+            "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "c_tinyint",
-              "dataType" : {
-                "type" : "Bigint"
-              }
-            }, {
-              "name" : "c_smallint",
-              "dataType" : {
-                "type" : "Bigint"
-              }
-            }, {
-              "name" : "c_int",
-              "dataType" : {
-                "type" : "Bigint"
-              }
-            }, {
-              "name" : "c_float",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "c_double",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "c_decimal",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "c_boolean",
-              "dataType" : {
-                "type" : "Boolean"
-              }
-            }, {
-              "name" : "c_null",
+              "name" : "col1",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "c_emptystring",
+              "name" : "col2",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "IaeZlip_tO-C75PmP4ZdR$$QRp4QZJmqz3TlI590z9-V",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "col1",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "c_date",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "c_timestamp",
-              "dataType" : {
-                "type" : "Timestamp"
-              }
-            }, {
-              "name" : "c_interval",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "c_time",
-              "dataType" : {
-                "type" : "Timestamp"
-              }
-            }, {
-              "name" : "c_array",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "c_struct",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "c_array_of_struct",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "c_struct_of_array",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "c_complex_struct",
+              "name" : "col2",
               "dataType" : {
                 "type" : "String"
               }
@@ -359,52 +291,120 @@
         "isCustomOutputSchema" : false
       }
     },
-    "7i2EX_HNva_dpKJYuYFYn$$tgHZ-sUEE-kHKtWh0bsH5" : {
-      "id" : "7i2EX_HNva_dpKJYuYFYn$$tgHZ-sUEE-kHKtWh0bsH5",
-      "component" : "Limit",
+    "0ZseTRUBJOZkWpWmlqKoc$$DgpeBJWNleNcvCYzG2zAr" : {
+      "id" : "0ZseTRUBJOZkWpWmlqKoc$$DgpeBJWNleNcvCYzG2zAr",
+      "component" : "Dataset",
       "metadata" : {
-        "label" : "limited_results",
-        "x" : -200,
+        "label" : "all_type_csv",
+        "x" : -560,
         "y" : -200,
         "phase" : 0
       },
       "properties" : {
-        "limit" : {
-          "expression" : "1"
+        "table" : {
+          "name" : "all_type_csv",
+          "sourceType" : "Source",
+          "sourceName" : "qa_team.qa_database",
+          "alias" : ""
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "Yvtx1Y9edJepgGS_R-qLr$$eySCBiMKESkbpq15XZm0h",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "col1",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "col2",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "in0"
+          "id" : "zLiNKVbxZ9lDLMKRpfNyE$$3BrMejTWHmLGmr78H4LAm",
+          "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "IaeZlip_tO-C75PmP4ZdR$$QRp4QZJmqz3TlI590z9-V",
+          "id" : "a8IPav3XU1p2L5K7WH4Gn$$ez7MKLDUT9aIuplQHlo2O",
           "schema" : {
             "entityType" : "",
-            "providerType" : "Databricks",
+            "providerType" : "databricks",
             "fields" : [ {
-              "name" : "col1",
+              "name" : "c_tinyint",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_smallint",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_float",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_double",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_decimal",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_boolean",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "c_null",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "col2",
+              "name" : "c_emptystring",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "c_timestamp",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_interval",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_time",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_array_of_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_struct_of_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_complex_struct",
               "dataType" : {
                 "type" : "String"
               }
