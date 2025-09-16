@@ -1,5 +1,5 @@
 Config = {"config1" : "'Pipeline 1 Config 1 Original'", "config2" : "'Pipeline 1 Config 2 Original'"}
-Schedule = Schedule(cron = "0 0/3 * * * ? *", timezone = "Asia/Kolkata", enabled = False)
+Schedule = Schedule(cron = "0 0/3 * * * ? *", timezone = "Asia/Kolkata")
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Config = Config, Schedule = Schedule, SensorSchedule = SensorSchedule):

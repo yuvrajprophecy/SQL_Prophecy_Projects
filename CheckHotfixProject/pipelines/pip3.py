@@ -1,4 +1,4 @@
-Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "Asia/Kolkata", enabled = False)
+Schedule = Schedule(cron = "0 0/3 * * * ? *", timezone = "Asia/Kolkata")
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
