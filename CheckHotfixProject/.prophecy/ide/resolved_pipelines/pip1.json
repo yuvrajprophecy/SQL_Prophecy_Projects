@@ -23,7 +23,7 @@
       }
     },
     "schedule" : {
-      "cron" : "0 0/5 * * * ? *",
+      "cron" : "0 0/4 * * * ? *",
       "timeZone" : "Asia/Kolkata",
       "emailOnSuccess" : false,
       "emailOnFailure" : false,
