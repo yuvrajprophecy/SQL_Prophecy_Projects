@@ -17,7 +17,7 @@
       "emailOnFailure" : false,
       "emailOnStart" : false,
       "emails" : [ ],
-      "enabled" : true
+      "enabled" : false
     },
     "sensorSchedule" : {
       "enabled" : false,
