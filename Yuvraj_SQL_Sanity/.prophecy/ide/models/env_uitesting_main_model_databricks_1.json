@@ -2904,8 +2904,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_3",
-        "x" : 1160,
-        "y" : 540,
+        "x" : 1120,
+        "y" : 440,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
