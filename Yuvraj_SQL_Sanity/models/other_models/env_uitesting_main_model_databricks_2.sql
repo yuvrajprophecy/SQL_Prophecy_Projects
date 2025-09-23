@@ -1,16 +1,49 @@
-WITH raw_orders AS (
-
-  SELECT * 
-  
-  FROM {{ ref('raw_orders')}}
-
-),
-
-all_type_partitioned AS (
+WITH all_type_partitioned AS (
 
   SELECT * 
   
   FROM {{ source('alias_spark_catalog_qa_db_warehouse', 'all_type_partitioned') }}
+
+),
+
+all_type_partitioned_1 AS (
+
+  SELECT * 
+  
+  FROM {{ source('alias_spark_catalog_qa_db_warehouse', 'all_type_partitioned') }}
+
+),
+
+qa_complex_macro_2 AS (
+
+  {#Evaluates data quality for a specific model and column to ensure accuracy and reliability.#}
+  {{
+    SQL_DatabricksParentProjectMain.qa_complex_macro(
+      model = 'all_type_partitioned_1', 
+      column_name_int = 'c_int'
+    )
+  }}
+
+),
+
+qa_complex_macro_1 AS (
+
+  {#Validates data integrity for a specific model by checking accepted integer values.#}
+  {{
+    SQL_DatabricksParentProjectMain.qa_complex_macro(
+      model = 'all_type_partitioned_1', 
+      column_name_int = 'p_int', 
+      accepted_values = [1]
+    )
+  }}
+
+),
+
+raw_orders AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_orders')}}
 
 ),
 
@@ -39,8 +72,29 @@ Join_1 AS (
   INNER JOIN all_type_partitioned AS in1
      ON in0.id != in1.c_tinyint
 
+),
+
+SQLStatement_1 AS (
+
+  SELECT *
+  
+  FROM Join_1
+  
+  WHERE c_int != (
+          (
+            SELECT count(*)
+            
+            FROM qa_complex_macro_2
+           )
+          + (
+              SELECT count(*)
+              
+              FROM qa_complex_macro_1
+             )
+        )
+
 )
 
 SELECT *
 
-FROM Join_1
+FROM SQLStatement_1

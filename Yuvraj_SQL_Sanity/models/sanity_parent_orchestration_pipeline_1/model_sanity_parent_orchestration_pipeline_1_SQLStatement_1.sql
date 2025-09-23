@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy__temp_sanity_parent_orchestration_pipeline_1_post_SQLStatement_1_0",
+    "alias": "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_Join_1_0",
     "database": "hive_metastore",
     "schema": "qa_db_warehouse"
   })
@@ -73,7 +73,7 @@ SetOperation_1 AS (
   
   SELECT * 
   
-  FROM `` AS in1
+  FROM Aggregate_1 AS in1
 
 ),
 

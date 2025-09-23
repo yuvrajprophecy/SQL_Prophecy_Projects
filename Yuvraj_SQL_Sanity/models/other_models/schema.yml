@@ -1,0 +1,66 @@
+---
+version: 2
+models:
+- name: "env_uitesting_main_model_databricks_2"
+  columns:
+  - name: "c_float"
+    dataType:
+      type: "Float"
+  - name: "c_boolean"
+    dataType:
+      type: "Boolean"
+  - name: "c_smallint"
+    dataType:
+      type: "SmallInt"
+  - name: "c_array"
+    dataType:
+      type: "Array"
+      dataType:
+        type: "String"
+  - name: "p_int"
+    dataType:
+      type: "Integer"
+  - name: "c_double"
+    dataType:
+      type: "Double"
+  - name: "c_struct"
+    dataType:
+      type: "Struct"
+      fields:
+      - name: "city"
+        dataType:
+          type: "String"
+      - name: "state"
+        dataType:
+          type: "String"
+      - name: "pin"
+        dataType:
+          type: "Bigint"
+  - name: "user_id"
+    dataType:
+      type: "Integer"
+  - name: "id"
+    dataType:
+      type: "Integer"
+  - name: "c_bigint"
+    dataType:
+      type: "Bigint"
+  - name: "order_date"
+    dataType:
+      type: "Date"
+  - name: "status"
+    dataType:
+      type: "String"
+  - name: "c_int"
+    dataType:
+      type: "Integer"
+  - name: "c_string"
+    dataType:
+      type: "String"
+  - name: "c_tinyint"
+    dataType:
+      type: "TinyInt"
+  - name: "p_string"
+    dataType:
+      type: "String"
+  tests: []

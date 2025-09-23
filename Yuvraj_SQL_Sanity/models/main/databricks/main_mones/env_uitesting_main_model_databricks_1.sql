@@ -543,7 +543,7 @@ Subgraph_1 AS (
 
 ),
 
-Filter_1 AS (
+Filter_1asd AS (
 
   SELECT * 
   
@@ -558,7 +558,7 @@ OrderBy_1 AS (
   {#Sorts filtered data by various criteria to prioritize specific records.#}
   SELECT * 
   
-  FROM Filter_1 AS in0
+  FROM Filter_1asd AS in0
   
   ORDER BY c_tinyint ASC NULLS FIRST, c_smallint DESC NULLS LAST, c_double ASC
 
@@ -641,6 +641,153 @@ qa_all_not_null_1 AS (
 
 ),
 
+MultiColumnRename_1 AS (
+
+  {{
+    DatabricksSqlBasics.MultiColumnRename(
+      'Limit_2', 
+      [
+        'c_tinyint', 
+        'c_smallint', 
+        'c_int', 
+        'c_bigint', 
+        'id', 
+        'user_id', 
+        'order_date', 
+        'status', 
+        'p_string', 
+        'c_boolean', 
+        'c_double', 
+        'c_string', 
+        'c_float', 
+        'c_array', 
+        'c_struct'
+      ], 
+      'editPrefixSuffix', 
+      [
+        'c_tinyint', 
+        'c_smallint', 
+        'c_int', 
+        'c_bigint', 
+        'c_float', 
+        'c_double', 
+        'c_string', 
+        'c_boolean', 
+        'c_array', 
+        'c_struct', 
+        'p_int', 
+        'p_string', 
+        'id', 
+        'user_id', 
+        'order_date', 
+        'status'
+      ], 
+      'Prefix', 
+      'pre_', 
+      "concat(upper(column_name), '_',column_name)"
+    )
+  }}
+
+),
+
+Transpose_1 AS (
+
+  {{
+    DatabricksSqlBasics.Transpose(
+      'MultiColumnRename_1', 
+      ['pre_c_int', 'pre_c_bigint', 'pre_c_string', 'pre_c_smallint', 'pre_c_tinyint', 'pre_id'], 
+      [
+        'pre_order_date', 
+        'pre_user_id', 
+        'pre_p_string', 
+        'p_int', 
+        'pre_status', 
+        'pre_c_struct', 
+        'pre_c_array'
+      ], 
+      [
+        'pre_c_tinyint', 
+        'pre_c_smallint', 
+        'pre_c_int', 
+        'pre_c_bigint', 
+        'pre_c_float', 
+        'pre_c_double', 
+        'pre_c_string', 
+        'pre_c_boolean', 
+        'pre_c_array', 
+        'pre_c_struct', 
+        'p_int', 
+        'pre_p_string', 
+        'pre_id', 
+        'pre_user_id', 
+        'pre_order_date', 
+        'pre_status'
+      ]
+    )
+  }}
+
+),
+
+TextToColumns_1 AS (
+
+  {{
+    DatabricksSqlBasics.TextToColumns(
+      'Limit_2', 
+      'c_string', 
+      "a", 
+      'splitColumns', 
+      1, 
+      'Leave extra in last column', 
+      'root', 
+      'generated', 
+      'generated_column'
+    )
+  }}
+
+),
+
+DataCleansing_1 AS (
+
+  {{
+    DatabricksSqlBasics.DataCleansing(
+      'TextToColumns_1', 
+      [
+        { "name": "c_tinyint", "dataType": "TinyInt" }, 
+        { "name": "c_smallint", "dataType": "SmallInt" }, 
+        { "name": "c_int", "dataType": "Integer" }, 
+        { "name": "c_bigint", "dataType": "Bigint" }, 
+        { "name": "c_float", "dataType": "Float" }, 
+        { "name": "c_double", "dataType": "Double" }, 
+        { "name": "c_string", "dataType": "String" }, 
+        { "name": "c_boolean", "dataType": "Boolean" }, 
+        { "name": "c_array", "dataType": "Array" }, 
+        { "name": "c_struct", "dataType": "Struct" }, 
+        { "name": "p_int", "dataType": "Integer" }, 
+        { "name": "p_string", "dataType": "String" }, 
+        { "name": "id", "dataType": "Integer" }, 
+        { "name": "user_id", "dataType": "Integer" }, 
+        { "name": "order_date", "dataType": "Date" }, 
+        { "name": "status", "dataType": "String" }, 
+        { "name": "root_1_generated", "dataType": "String" }
+      ], 
+      'makeUppercase', 
+      ['c_tinyint', 'c_smallint', 'c_int', 'c_boolean', 'c_string', 'p_string', 'order_date', 'id'], 
+      true, 
+      'NA', 
+      true, 
+      0, 
+      true, 
+      true, 
+      true, 
+      true, 
+      true, 
+      true, 
+      true
+    )
+  }}
+
+),
+
 SQLStatement_2 AS (
 
   SELECT *
@@ -648,10 +795,22 @@ SQLStatement_2 AS (
   FROM qa_all_not_null_1
   
   WHERE p_int != (
-          SELECT count(*)
-          
-          FROM Subgraph_2
-         )
+          (
+            SELECT count(*)
+            
+            FROM Subgraph_2
+           )
+          + (
+              SELECT count(*)
+              
+              FROM Transpose_1
+             )
+          + (
+              SELECT count(*)
+              
+              FROM DataCleansing_1
+             )
+        )
 
 )
 

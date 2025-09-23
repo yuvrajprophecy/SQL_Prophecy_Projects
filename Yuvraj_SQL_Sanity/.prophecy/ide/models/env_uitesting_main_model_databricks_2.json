@@ -10,13 +10,107 @@
     "version" : 3
   },
   "processes" : {
+    "OqLN97rybvSCUmdBArO9b" : {
+      "id" : "OqLN97rybvSCUmdBArO9b",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_partitioned",
+        "slug" : "all_type_partitioned",
+        "x" : -720,
+        "y" : 0,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_partitioned",
+          "sourceType" : "Source",
+          "sourceName" : "alias_spark_catalog_qa_db_warehouse",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "yqjlZyDsxFbWnOdv5lmW5",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "6CP-5NpoyN8aU4hSupRWK$$i5OhoVn_LtJjvt46Q-dKq" : {
+      "id" : "6CP-5NpoyN8aU4hSupRWK$$i5OhoVn_LtJjvt46Q-dKq",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_partitioned_1",
+        "slug" : "all_type_partitioned_1",
+        "x" : -920,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_partitioned",
+          "sourceType" : "Source",
+          "sourceName" : "alias_spark_catalog_qa_db_warehouse",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "J-_r7KcDg6HMiLOhztVrR$$NlXpkcvUwkOSSzbyzELZs",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "pERcGhd16GfImq9WeEk8s$$Fq8hWw_ogVMNXszcq7JWA" : {
+      "id" : "pERcGhd16GfImq9WeEk8s$$Fq8hWw_ogVMNXszcq7JWA",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_1",
+        "slug" : "SQLStatement_1",
+        "x" : -160,
+        "y" : -180,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select * from Join_1 where c_int != (\n    (select count(*) from qa_complex_macro_2) +\n    (select count(*) from qa_complex_macro_1)\n)"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8UWfMkXiUSPHlwANw33E5$$DZVzfgGL9QlpEyaO02byu",
+          "slug" : "Join_1"
+        }, {
+          "id" : "VCOgqSTvYcMAAen5nMO66$$MRAjA91l7iJ2HfE2MFSSo",
+          "slug" : "qa_complex_macro_2"
+        }, {
+          "id" : "BRK2Vai_B4QnVJd164OSK$$Au5ILLfj0C_SEkpGE0-TX",
+          "slug" : "qa_complex_macro_1"
+        } ],
+        "outputs" : [ {
+          "id" : "bkZegrug53dE2vW8DqaLf$$cRJNUuFIx-2HAchf83eQS",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "env_uitesting_main_model_databricks_2##wWuK4uKh" : {
       "id" : "env_uitesting_main_model_databricks_2##wWuK4uKh",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "env_uitesting_main_model_databricks_2",
-        "x" : 0,
-        "y" : 0,
+        "x" : 80,
+        "y" : -180,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -24,7 +118,7 @@
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM Join_1\n",
+        "query" : "SELECT * \n\nFROM SQLStatement_1\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -33,10 +127,89 @@
       "ports" : {
         "inputs" : [ {
           "id" : "C4hXDyx9",
-          "slug" : "Join_1"
+          "slug" : "SQLStatement_1"
         } ],
         "outputs" : [ {
           "id" : "phaAWJUg",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ABdEAye8eU8_-_yxbyCBU$$cpB8FRGZnpXp9UsP5lI_f" : {
+      "id" : "ABdEAye8eU8_-_yxbyCBU$$cpB8FRGZnpXp9UsP5lI_f",
+      "component" : "Macro",
+      "metadata" : {
+        "label" : "qa_complex_macro_2",
+        "slug" : "qa_complex_macro_2",
+        "x" : -540,
+        "y" : -300,
+        "phase" : 0,
+        "macroDependencies" : [ "SQL_DatabricksParentProjectMain.qa_complex_macro" ],
+        "comment" : "Evaluates data quality for a specific model and column to ensure accuracy and reliability.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "macroName" : "qa_complex_macro",
+        "parameters" : [ {
+          "name" : "model",
+          "value" : "'all_type_partitioned_1'"
+        }, {
+          "name" : "column_name_int",
+          "value" : "'c_int'"
+        }, {
+          "name" : "accepted_values"
+        } ],
+        "projectName" : "SQL_DatabricksParentProjectMain"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PizdTUpQ8uYTrWVgSxFkV",
+          "slug" : "all_type_partitioned_1"
+        } ],
+        "outputs" : [ {
+          "id" : "eS3Og3SRDfn01OoO2a0Xj$$XN6l1zTW27Ghep4XM_wrG",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "D09r8wb9ABrljhpSNPDei$$ot9KdGwNZvZf7C3ABD5n8" : {
+      "id" : "D09r8wb9ABrljhpSNPDei$$ot9KdGwNZvZf7C3ABD5n8",
+      "component" : "Macro",
+      "metadata" : {
+        "label" : "qa_complex_macro_1",
+        "slug" : "qa_complex_macro_1",
+        "x" : -720,
+        "y" : -420,
+        "phase" : 0,
+        "macroDependencies" : [ "SQL_DatabricksParentProjectMain.qa_complex_macro" ],
+        "comment" : "Validates data integrity for a specific model by checking accepted integer values.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "macroName" : "qa_complex_macro",
+        "parameters" : [ {
+          "name" : "model",
+          "value" : "'all_type_partitioned_1'"
+        }, {
+          "name" : "column_name_int",
+          "value" : "'p_int'"
+        }, {
+          "name" : "accepted_values",
+          "value" : "[1]"
+        } ],
+        "projectName" : "SQL_DatabricksParentProjectMain"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "cX_VBtVHgHEpcAGkLpcNX",
+          "slug" : "all_type_partitioned_1"
+        } ],
+        "outputs" : [ {
+          "id" : "WrQvoVbY4Jc9t2pkUc1eS$$ROkeSwOipcxVtQnzpWgK6",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -70,42 +243,14 @@
         "autoUpdateOnRun" : false
       }
     },
-    "OqLN97rybvSCUmdBArO9b" : {
-      "id" : "OqLN97rybvSCUmdBArO9b",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "all_type_partitioned",
-        "slug" : "all_type_partitioned",
-        "x" : -720,
-        "y" : 0,
-        "phase" : 0
-      },
-      "properties" : {
-        "table" : {
-          "name" : "all_type_partitioned",
-          "sourceType" : "Source",
-          "sourceName" : "alias_spark_catalog_qa_db_warehouse",
-          "alias" : ""
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "yqjlZyDsxFbWnOdv5lmW5",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
     "XNqBFbjOIIB4hBDGIoLhf$$VaAvhbMF3baxqGIV7Lyl_" : {
       "id" : "XNqBFbjOIIB4hBDGIoLhf$$VaAvhbMF3baxqGIV7Lyl_",
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1",
         "slug" : "Join_1",
-        "x" : -520,
-        "y" : -100,
+        "x" : -480,
+        "y" : -120,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Combines order details with various data types for comprehensive order analysis.",
@@ -123,82 +268,98 @@
           "expression" : {
             "expression" : "in1.c_tinyint"
           },
-          "alias" : "c_tinyint"
+          "alias" : "c_tinyint",
+          "_row_id" : "759024"
         }, {
           "expression" : {
             "expression" : "in1.c_smallint"
           },
-          "alias" : "c_smallint"
+          "alias" : "c_smallint",
+          "_row_id" : "507158119"
         }, {
           "expression" : {
             "expression" : "in1.c_int"
           },
-          "alias" : "c_int"
+          "alias" : "c_int",
+          "_row_id" : "437314665"
         }, {
           "expression" : {
             "expression" : "in1.c_bigint"
           },
-          "alias" : "c_bigint"
+          "alias" : "c_bigint",
+          "_row_id" : "1167346989"
         }, {
           "expression" : {
             "expression" : "in1.c_float"
           },
-          "alias" : "c_float"
+          "alias" : "c_float",
+          "_row_id" : "1392827590"
         }, {
           "expression" : {
             "expression" : "in1.c_double"
           },
-          "alias" : "c_double"
+          "alias" : "c_double",
+          "_row_id" : "99415504"
         }, {
           "expression" : {
             "expression" : "in1.c_string"
           },
-          "alias" : "c_string"
+          "alias" : "c_string",
+          "_row_id" : "1775506398"
         }, {
           "expression" : {
             "expression" : "in1.c_boolean"
           },
-          "alias" : "c_boolean"
+          "alias" : "c_boolean",
+          "_row_id" : "1091754385"
         }, {
           "expression" : {
             "expression" : "in1.c_array"
           },
-          "alias" : "c_array"
+          "alias" : "c_array",
+          "_row_id" : "937636016"
         }, {
           "expression" : {
             "expression" : "in1.c_struct"
           },
-          "alias" : "c_struct"
+          "alias" : "c_struct",
+          "_row_id" : "99158302"
         }, {
           "expression" : {
             "expression" : "in1.p_int"
           },
-          "alias" : "p_int"
+          "alias" : "p_int",
+          "_row_id" : "1690976869"
         }, {
           "expression" : {
             "expression" : "in1.p_string"
           },
-          "alias" : "p_string"
+          "alias" : "p_string",
+          "_row_id" : "1535416243"
         }, {
           "expression" : {
             "expression" : "in0.id"
           },
-          "alias" : "id"
+          "alias" : "id",
+          "_row_id" : "317488119"
         }, {
           "expression" : {
             "expression" : "in0.user_id"
           },
-          "alias" : "user_id"
+          "alias" : "user_id",
+          "_row_id" : "1530768131"
         }, {
           "expression" : {
             "expression" : "in0.order_date"
           },
-          "alias" : "order_date"
+          "alias" : "order_date",
+          "_row_id" : "1444880750"
         }, {
           "expression" : {
             "expression" : "in0.status"
           },
-          "alias" : "status"
+          "alias" : "status",
+          "_row_id" : "1120257553"
         } ],
         "activeTab" : "conditions",
         "columnsSelector" : [ "G0VGDtSIGBY4Vp1odihAc$$sp2BMaVGVWm2uiZka38jr##id", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_tinyint", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_tinyint", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_smallint", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_int", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_bigint", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_float", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_double", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_string", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_boolean", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_array", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##c_struct", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##p_int", "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo##p_string", "G0VGDtSIGBY4Vp1odihAc$$sp2BMaVGVWm2uiZka38jr##id", "G0VGDtSIGBY4Vp1odihAc$$sp2BMaVGVWm2uiZka38jr##user_id", "G0VGDtSIGBY4Vp1odihAc$$sp2BMaVGVWm2uiZka38jr##order_date", "G0VGDtSIGBY4Vp1odihAc$$sp2BMaVGVWm2uiZka38jr##status" ],
@@ -234,9 +395,39 @@
     "target" : "XNqBFbjOIIB4hBDGIoLhf$$VaAvhbMF3baxqGIV7Lyl_",
     "targetPort" : "yNoqQnLrHvpN_pOrzaEuB$$yFbP78xT59HaeAE6R7ZRo"
   }, {
-    "id" : "9PJdznkQpMSjrjQeAi6R8",
+    "id" : "gB4KOSUygmy3r6vZwV9et$$CvRi3RnfB8s4up3gmZL_l",
+    "source" : "6CP-5NpoyN8aU4hSupRWK$$i5OhoVn_LtJjvt46Q-dKq",
+    "sourcePort" : "J-_r7KcDg6HMiLOhztVrR$$NlXpkcvUwkOSSzbyzELZs",
+    "target" : "D09r8wb9ABrljhpSNPDei$$ot9KdGwNZvZf7C3ABD5n8",
+    "targetPort" : "cX_VBtVHgHEpcAGkLpcNX"
+  }, {
+    "id" : "wLWlVbpmGbbsrDlEYwh9i",
+    "source" : "6CP-5NpoyN8aU4hSupRWK$$i5OhoVn_LtJjvt46Q-dKq",
+    "sourcePort" : "J-_r7KcDg6HMiLOhztVrR$$NlXpkcvUwkOSSzbyzELZs",
+    "target" : "ABdEAye8eU8_-_yxbyCBU$$cpB8FRGZnpXp9UsP5lI_f",
+    "targetPort" : "PizdTUpQ8uYTrWVgSxFkV"
+  }, {
+    "id" : "EOD7NuMIZqb-l47PJX0Ig",
     "source" : "XNqBFbjOIIB4hBDGIoLhf$$VaAvhbMF3baxqGIV7Lyl_",
     "sourcePort" : "A7YIFGxZNCSn6-cUpJJME$$2bnc0RIl3Gn6lWwQITD2_",
+    "target" : "pERcGhd16GfImq9WeEk8s$$Fq8hWw_ogVMNXszcq7JWA",
+    "targetPort" : "8UWfMkXiUSPHlwANw33E5$$DZVzfgGL9QlpEyaO02byu"
+  }, {
+    "id" : "JYJg7WpECPhG7baY-Bvjq",
+    "source" : "ABdEAye8eU8_-_yxbyCBU$$cpB8FRGZnpXp9UsP5lI_f",
+    "sourcePort" : "eS3Og3SRDfn01OoO2a0Xj$$XN6l1zTW27Ghep4XM_wrG",
+    "target" : "pERcGhd16GfImq9WeEk8s$$Fq8hWw_ogVMNXszcq7JWA",
+    "targetPort" : "VCOgqSTvYcMAAen5nMO66$$MRAjA91l7iJ2HfE2MFSSo"
+  }, {
+    "id" : "sBO29KkiHobgywRhQtjLY",
+    "source" : "D09r8wb9ABrljhpSNPDei$$ot9KdGwNZvZf7C3ABD5n8",
+    "sourcePort" : "WrQvoVbY4Jc9t2pkUc1eS$$ROkeSwOipcxVtQnzpWgK6",
+    "target" : "pERcGhd16GfImq9WeEk8s$$Fq8hWw_ogVMNXszcq7JWA",
+    "targetPort" : "BRK2Vai_B4QnVJd164OSK$$Au5ILLfj0C_SEkpGE0-TX"
+  }, {
+    "id" : "mnGJr9cmsvjnz9yXmRUkF",
+    "source" : "pERcGhd16GfImq9WeEk8s$$Fq8hWw_ogVMNXszcq7JWA",
+    "sourcePort" : "bkZegrug53dE2vW8DqaLf$$cRJNUuFIx-2HAchf83eQS",
     "target" : "env_uitesting_main_model_databricks_2##wWuK4uKh",
     "targetPort" : "C4hXDyx9"
   } ],

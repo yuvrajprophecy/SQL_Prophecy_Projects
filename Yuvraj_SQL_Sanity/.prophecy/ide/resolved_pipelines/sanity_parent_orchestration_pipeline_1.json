@@ -12,6 +12,33 @@
     }
   },
   "processes" : {
+    "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3" : {
+      "id" : "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_sanity_parent_orchestration_pipeline_1_Join_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_sanity_parent_orchestration_pipeline_1_Join_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy__temp_sanity_parent_orchestration_pipeline_1_post_Join_1_0", "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3", "hM_3DdNi-bqq8MhaIN0M7$$r5jocjn56mDoXiPocpU0m", "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_Join_1_0" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_sanity_parent_orchestration_pipeline_1_Join_1_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "model_sanity_parent_orchestration_pipeline_1_Join_1_out_1",
+          "slug" : "out_1"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0" : {
       "id" : "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0",
       "component" : "Dataset",
@@ -53,7 +80,7 @@
         "modelName" : "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy__temp_sanity_parent_orchestration_pipeline_1_post_SQLStatement_1_0", "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN", "vEkqVS8Z1AmXW7KABrJVw$$pXjeU3HhbDpmJUgANqYTJ", "ChOk4BugA7oTy_Cy4iIFX$$Ysy_XjUnCbgHoLvcxZXfQ", "SVTxwjzsOk-WJW6HXIFrV$$AQiyLagn_deyQK_qpZXsQ", "m9RlZSSA59AYGHcOZtxpI$$O0r3hyw-0nCleid4yXPYw", "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0" ],
+        "visualProcessIds" : [ "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_Join_1_0", "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN", "vEkqVS8Z1AmXW7KABrJVw$$pXjeU3HhbDpmJUgANqYTJ", "ChOk4BugA7oTy_Cy4iIFX$$Ysy_XjUnCbgHoLvcxZXfQ", "SVTxwjzsOk-WJW6HXIFrV$$AQiyLagn_deyQK_qpZXsQ", "m9RlZSSA59AYGHcOZtxpI$$O0r3hyw-0nCleid4yXPYw", "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0" ],
         "type" : "table",
         "isTemporaryTable" : true
       },
@@ -221,8 +248,141 @@
               }
             } ]
           },
-          "slug" : "out0"
+          "slug" : "out0",
+          "dataExplorerProps" : {
+            "sorts" : [ ],
+            "filter" : {
+              "type" : "Composite",
+              "op" : {
+                "type" : "AND"
+              },
+              "filters" : [ {
+                "lhs" : {
+                  "type" : "Field",
+                  "value" : "Variable_category"
+                },
+                "type" : "Binary",
+                "op" : "=",
+                "rhs" : {
+                  "type" : "Literal",
+                  "value" : "'Financial performance'"
+                }
+              } ]
+            }
+          }
         } ]
+      }
+    },
+    "hM_3DdNi-bqq8MhaIN0M7$$r5jocjn56mDoXiPocpU0m" : {
+      "id" : "hM_3DdNi-bqq8MhaIN0M7$$r5jocjn56mDoXiPocpU0m",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "env_uitesting_main_model_databricks_1_1",
+        "x" : 920,
+        "y" : 360
+      },
+      "properties" : {
+        "modelName" : "env_uitesting_main_model_databricks_1"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9bUwsF7d-ACLOowFhIwLI$$jgu5Szf9W126ohlh1anMR",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "uPesk6KgnrinfnkG-nutq$$0HwNCPb80A3p__aqZomaS",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "p_int",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "p_string",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_string",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "c_bigint",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_smallint",
+              "dataType" : {
+                "type" : "SmallInt"
+              }
+            }, {
+              "name" : "c_tinyint",
+              "dataType" : {
+                "type" : "TinyInt"
+              }
+            }, {
+              "name" : "c_float",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "c_boolean",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }
+            }, {
+              "name" : "c_double",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_struct",
+              "dataType" : {
+                "type" : "Struct",
+                "fields" : [ {
+                  "name" : "city",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "state",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "pin",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
+              }
+            }, {
+              "name" : "c_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : true
       }
     },
     "bSp2BAeazUMeXNYr3jMIj$$F2uUDa4J2gWeJ6VJyyG6T" : {
@@ -230,13 +390,14 @@
       "component" : "Email",
       "metadata" : {
         "label" : "send_danger_email",
-        "x" : 1320,
+        "x" : 1540,
         "y" : 180
       },
       "properties" : {
         "body" : "This is a dangerous email from sanity pipeline for parent databricks project",
         "subject" : "This is a dangerous email from sanity pipeline for parent databricks project",
         "includeData" : true,
+        "fileName" : "sanity_parent_sql_databricks",
         "to" : [ "abhisheks@prophecy.io" ],
         "bcc" : [ "abhisheks+bcc@prophecy.io" ],
         "cc" : [ "abhisheks+cc@prophecy.io" ],
@@ -246,7 +407,8 @@
             "id" : "smtp"
           },
           "type" : "connector"
-        }
+        },
+        "fileFormat" : "xlsx"
       },
       "ports" : {
         "inputs" : [ {
@@ -304,6 +466,65 @@
               "dataType" : {
                 "type" : "String"
               }
+            }, {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }
+            }, {
+              "name" : "c_struct",
+              "dataType" : {
+                "type" : "Struct",
+                "fields" : [ {
+                  "name" : "city",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "state",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "pin",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
+              }
+            }, {
+              "name" : "p_string",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "c_float",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "c_boolean",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "c_double",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
             } ]
           },
           "slug" : "in0"
@@ -320,17 +541,29 @@
     "target" : "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0",
     "targetPort" : "input_port_0_1"
   }, {
+    "id" : "icPEC2ohz8kZNfMYNRKyA",
+    "source" : "hM_3DdNi-bqq8MhaIN0M7$$r5jocjn56mDoXiPocpU0m",
+    "sourcePort" : "uPesk6KgnrinfnkG-nutq$$0HwNCPb80A3p__aqZomaS",
+    "target" : "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3",
+    "targetPort" : "model_sanity_parent_orchestration_pipeline_1_Join_1_in_1"
+  }, {
     "id" : "conn_prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0_m9RlZSSA59AYGHcOZtxpI$$O0r3hyw-0nCleid4yXPYw_hbC8g47rNx88OHrTIVAF-$$mGhAMktxY-5M3l8aoo0wC",
     "source" : "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0",
     "sourcePort" : "output_port_0_1",
     "target" : "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN",
     "targetPort" : "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1_in_1"
   }, {
-    "id" : "conn_mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN_bSp2BAeazUMeXNYr3jMIj$$F2uUDa4J2gWeJ6VJyyG6T",
-    "source" : "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN",
-    "sourcePort" : "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1_out_1",
+    "id" : "conn_jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3_bSp2BAeazUMeXNYr3jMIj$$F2uUDa4J2gWeJ6VJyyG6T",
+    "source" : "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3",
+    "sourcePort" : "model_sanity_parent_orchestration_pipeline_1_Join_1_out_1",
     "target" : "bSp2BAeazUMeXNYr3jMIj$$F2uUDa4J2gWeJ6VJyyG6T",
     "targetPort" : "JOXtSL4dHNARGh2BndgWS$$id-YxQ96Saec_RYzWsrGD"
+  }, {
+    "id" : "conn_mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN_jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3",
+    "source" : "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN",
+    "sourcePort" : "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1_out_1",
+    "target" : "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3",
+    "targetPort" : "model_sanity_parent_orchestration_pipeline_1_Join_1_in_1"
   } ],
   "component" : "Pipeline"
 }

@@ -14,25 +14,6 @@
     "path" : "",
     "editable" : true
   },
-  "datasets" : { },
-  "pipelines" : {
-    "sanity_parent_orchestration_pipeline_1" : {
-      "id" : "sanity_parent_orchestration_pipeline_1",
-      "name" : "sanity_parent_orchestration_pipeline_1",
-      "path" : "SQL_DatabricksParentProjectMain/.prophecy/ide/pipelines/sanity_parent_orchestration_pipeline_1.json",
-      "config" : {
-        "schema" : {
-          "type" : "record",
-          "fields" : [ ]
-        }
-      },
-      "preview" : [ ],
-      "sources" : [ {
-        "id" : "_vSrbpCqSxQ_Qtfm8A80A",
-        "label" : "S3Source_1"
-      } ]
-    }
-  },
   "externalSources" : {
     "type" : "Project",
     "name" : "",
@@ -272,16 +253,14 @@
   },
   "dependenciesContainer" : {
     "dependencies" : { },
-    "prophecyProjectDependencies" : { }
+    "prophecyProjectDependencies" : {
+      "https://github.com/prophecy-io/databricks-sql-basics" : "22363"
+    }
   },
   "entitiesToSync" : [ {
     "name" : "env_uitesting_main_model_databricks_1",
     "type" : "Model",
     "syncedOnce" : true
-  }, {
-    "name" : "env_uitesting_main_model_databricks_2",
-    "type" : "Model",
-    "syncedOnce" : false
   } ],
   "frontEndLanguage" : "sql"
 }

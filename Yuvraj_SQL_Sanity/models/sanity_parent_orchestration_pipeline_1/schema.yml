@@ -4,6 +4,9 @@ models:
 - name: "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1"
   tags:
   - "prophecy_temp"
+- name: "model_sanity_parent_orchestration_pipeline_1_Join_1"
+  tags:
+  - "prophecy_temp"
 sources:
 - name: "prophecy__temp_sanity_parent_orchestration_pipeline_1_source"
   database: "hive_metastore"
@@ -13,7 +16,10 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy__temp_sanity_parent_orchestration_pipeline_1_post_SQLStatement_1_0"
+  - name: "prophecy__temp_sanity_parent_orchestration_pipeline_1_post_Join_1_0"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_Join_1_0"
     tags:
     - "prophecy_temp"
   - name: "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0"

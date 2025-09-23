@@ -6,3 +6,6 @@ packages:
   version:
   - ">=0.7.0"
   - "<0.8.0"
+- revision: "0.0.4"
+  git: "https://github.com/prophecy-io/databricks-sql-basics"
+  subdirectory: ""

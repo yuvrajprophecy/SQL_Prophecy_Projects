@@ -1,4 +1,9 @@
 with DAG():
+    model_sanity_parent_orchestration_pipeline_1_Join_1 = Task(
+        task_id = "model_sanity_parent_orchestration_pipeline_1_Join_1", 
+        component = "Model", 
+        modelName = "model_sanity_parent_orchestration_pipeline_1_Join_1"
+    )
     S3Source_1 = Task(
         task_id = "S3Source_1", 
         component = "Dataset", 
@@ -69,17 +74,29 @@ with DAG():
         ), 
         filePath = "/datasets/orchestration_datasets/csv/valid/9MB_annual-enterprise-survey-2023-financial-year-provisional.csv"
     )
+    env_uitesting_main_model_databricks_1_1 = Task(
+        task_id = "env_uitesting_main_model_databricks_1_1", 
+        component = "Model", 
+        modelName = "env_uitesting_main_model_databricks_1"
+    )
     send_danger_email = Task(
         task_id = "send_danger_email", 
         component = "Email", 
         body = "This is a dangerous email from sanity pipeline for parent databricks project", 
         subject = "This is a dangerous email from sanity pipeline for parent databricks project", 
         includeData = True, 
+        fileName = "sanity_parent_sql_databricks", 
         to = ["abhisheks@prophecy.io"], 
         bcc = ["abhisheks+bcc@prophecy.io"], 
         cc = ["abhisheks+cc@prophecy.io"], 
-        connection = Connection(kind = "smtp", id = "smtp")
+        connection = Connection(kind = "smtp", id = "smtp"), 
+        fileFormat = "xlsx"
     )
     S3Source_1.out0 >> S3Source_1.input_port_0_1
+    (
+        model_sanity_parent_orchestration_pipeline_1_SQLStatement_1.out_1
+        >> model_sanity_parent_orchestration_pipeline_1_Join_1.in_1
+    )
+    env_uitesting_main_model_databricks_1_1.out >> model_sanity_parent_orchestration_pipeline_1_Join_1.in_1
+    model_sanity_parent_orchestration_pipeline_1_Join_1.out_1 >> send_danger_email.in0
     S3Source_1.output_port_0_1 >> model_sanity_parent_orchestration_pipeline_1_SQLStatement_1.in_1
-    model_sanity_parent_orchestration_pipeline_1_SQLStatement_1.out_1 >> send_danger_email.in0
