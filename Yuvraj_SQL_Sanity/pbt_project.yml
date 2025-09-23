@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: v3.4.1.0-3
+version: v3.4.1.0-4
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -305,6 +305,9 @@ sqlSnapshots:
       - name: c_date
         dataType:
           type: Date
+      - name: c_unique
+        dataType:
+          type: Bigint
       - name: dbt_scd_id
         dataType:
           type: String

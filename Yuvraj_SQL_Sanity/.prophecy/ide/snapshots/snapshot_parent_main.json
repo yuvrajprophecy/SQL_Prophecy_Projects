@@ -9,10 +9,11 @@
     },
     "graphConfig" : {
       "entityConfig" : {
+        "alias" : "\"alias_snapshot_parent_main\"",
         "strategy" : "\"timestamp\"",
         "updated_at" : "\"c_date\"",
         "target_schema" : "\"qa_db_warehouse\"",
-        "unique_key" : "\"c_int\"",
+        "unique_key" : "\"c_unique\"",
         "type" : "SnapshotConfig"
       }
     },
@@ -160,6 +161,11 @@
             "expression" : "CURRENT_DATE"
           },
           "alias" : "c_date"
+        }, {
+          "expression" : {
+            "expression" : "monotonically_increasing_id()"
+          },
+          "alias" : "c_unique"
         } ]
       },
       "ports" : {
@@ -183,7 +189,7 @@
     "target" : "Ih_Yqr3tvfeHxm974RgWH$$9PFnvw5zinSoLYt3Y0h3K",
     "targetPort" : "wFuBiEuxJp5B6jW-dIJei$$OXBJ4_zBNbV8KJuXJTCuh"
   }, {
-    "id" : "_YvXOROFhk6njW1DdkDmn",
+    "id" : "icREI2Yo2oktuZNPlnTkY",
     "source" : "Ih_Yqr3tvfeHxm974RgWH$$9PFnvw5zinSoLYt3Y0h3K",
     "sourcePort" : "tjYbKoWR3OCLu6qUd5lQF$$heifXRIUHcpactSH-rBoY",
     "target" : "snapshot_parent_main##zPnsAi5g",

@@ -1,9 +1,10 @@
 {% snapshot snapshot_parent_main %}
 {{
   config({    
+    "alias": "alias_snapshot_parent_main",
     "strategy": "timestamp",
     "target_schema": "qa_db_warehouse",
-    "unique_key": "c_int",
+    "unique_key": "c_unique",
     "updated_at": "c_date"
   })
 }}
@@ -31,7 +32,8 @@ Reformat_1 AS (
     c_struct AS c_struct,
     p_int AS p_int,
     p_string AS p_string,
-    CURRENT_DATE AS c_date
+    CURRENT_DATE AS c_date,
+    monotonically_increasing_id() AS c_unique
   
   FROM all_type_partitioned AS in0
 
