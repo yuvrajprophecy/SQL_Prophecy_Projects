@@ -2946,8 +2946,8 @@
       "metadata" : {
         "label" : "qa_all_not_null_1",
         "slug" : "qa_all_not_null_1",
-        "x" : 1440,
-        "y" : 200,
+        "x" : 1620,
+        "y" : 420,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksParentProjectMain.qa_all_not_null" ],
         "comment" : "Ensures data integrity by checking for non-null values in a specific column of a dataset.",
