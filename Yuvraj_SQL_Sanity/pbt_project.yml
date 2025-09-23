@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: v3.4.0-1
+version: v3.4.0-2
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -330,17 +330,16 @@ sqlSnapshots:
       sources: []
       snapshots: []
     createdAt: '2024-09-16 08:55:54'
-sqlTests: {}
-sqlMacros:
-  .prophecy/metadata/sqlmacros/default__language_specific_deduplicate:
-    name: default__language_specific_deduplicate
-    macroType: query
+sqlTests:
+  .prophecy/metadata/sqltests/parent_multi_model_not_null:
+    name: parent_multi_model_not_null
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
-    - macros/gems/language_specific_deduplicate.sql
-    - macros/gems/gems.yml
-    createdAt: '2023-04-15 08:37:20'
+    - tests/generic_parent/parent_multi_model_not_null.sql
+    testType: GenericDataTest
+    createdAt: '2024-10-15 06:07:25'
+sqlMacros:
   .prophecy/metadata/sqlmacros/databricks__language_specific_concat:
     name: databricks__language_specific_concat
     macroType: expression
@@ -453,6 +452,25 @@ sqlMacros:
     createdAt: '2023-04-15 08:37:06'
   .prophecy/metadata/sqlmacros/snowflake__language_specific_deduplicate:
     name: snowflake__language_specific_deduplicate
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/gems/language_specific_deduplicate.sql
+    - macros/gems/gems.yml
+    createdAt: '2023-04-15 08:37:20'
+  .prophecy/metadata/sqlmacros/parent_transform_deduplicate:
+    name: parent_transform_deduplicate
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/gems/parent_join_split/parent_transform_deduplicate.sql
+    - .prophecy/ide/macros/parent_transform_deduplicate.json
+    - gems/parent_transform_deduplicate.py
+    createdAt: '2024-10-15 06:16:21'
+  .prophecy/metadata/sqlmacros/default__language_specific_deduplicate:
+    name: default__language_specific_deduplicate
     macroType: query
     description: null
     author: abhisheks+e2etests@prophecy.io

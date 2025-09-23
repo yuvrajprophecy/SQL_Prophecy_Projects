@@ -622,10 +622,22 @@ Reformat_4 AS (
 
 ),
 
+parent_transform_deduplicate_1 AS (
+
+  {#Streamlines and removes duplicates from a dataset for improved data quality.#}
+  {{ SQL_DatabricksParentProjectMain.parent_transform_deduplicate('Reformat_4', 'p_int', 'c_int') }}
+
+),
+
 qa_all_not_null_1 AS (
 
   {#Ensures data integrity by checking for non-null values in a specific column of a dataset.#}
-  {{ SQL_DatabricksParentProjectMain.qa_all_not_null(model = 'Reformat_4', column_name = 'p_string') }}
+  {{
+    SQL_DatabricksParentProjectMain.qa_all_not_null(
+      model = 'parent_transform_deduplicate_1', 
+      column_name = 'p_string'
+    )
+  }}
 
 ),
 

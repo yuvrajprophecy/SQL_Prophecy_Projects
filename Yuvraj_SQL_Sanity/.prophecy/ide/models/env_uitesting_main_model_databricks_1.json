@@ -2607,6 +2607,56 @@
         "autoUpdateOnRun" : false
       }
     },
+    "i29jFRkxbfV_1OO9cqbE5$$uWYJxNOoZNjLiJyempqoc" : {
+      "id" : "i29jFRkxbfV_1OO9cqbE5$$uWYJxNOoZNjLiJyempqoc",
+      "component" : "parent_transform_deduplicate",
+      "metadata" : {
+        "label" : "parent_transform_deduplicate_1",
+        "slug" : "parent_transform_deduplicate_1",
+        "x" : 1360,
+        "y" : 300,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Streamlines and removes duplicates from a dataset for improved data quality."
+      },
+      "properties" : {
+        "relation" : "Reformat_4",
+        "order_by" : "p_int",
+        "partition_by" : "c_int",
+        "_oldMacroProperties" : {
+          "macroName" : "parent_transform_deduplicate",
+          "projectName" : "SQL_DatabricksParentProjectMain",
+          "parameters" : [ {
+            "name" : "relation",
+            "value" : "'Reformat_4'"
+          }, {
+            "name" : "order_by",
+            "value" : "'p_int'"
+          }, {
+            "name" : "partition_by",
+            "value" : "'c_int'"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wJvbiqWeB11he9v6TnNcs$$JCyZxEy4tiAB8M0q6UoHd",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "kNGyuAWI2nxqtdLUX9xR6$$ocf9A2hx0yOSsOcAh-8AG",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "componentInfo" : {
+        "gemId" : "parent_transform_deduplicate_SQL_DatabricksParentProjectMain",
+        "name" : "parent_transform_deduplicate",
+        "projectName" : "SQL_DatabricksParentProjectMain",
+        "sourceProjectName" : "SQL_DatabricksParentProjectMain"
+      }
+    },
     "Join_1##QmsfJus7" : {
       "id" : "Join_1##QmsfJus7",
       "component" : "Join",
@@ -2882,8 +2932,8 @@
       "metadata" : {
         "label" : "qa_all_not_null_1",
         "slug" : "qa_all_not_null_1",
-        "x" : 1380,
-        "y" : 300,
+        "x" : 1440,
+        "y" : 200,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksParentProjectMain.qa_all_not_null" ],
         "comment" : "Ensures data integrity by checking for non-null values in a specific column of a dataset.",
@@ -2893,7 +2943,7 @@
         "macroName" : "qa_all_not_null",
         "parameters" : [ {
           "name" : "model",
-          "value" : "'Reformat_4'"
+          "value" : "'parent_transform_deduplicate_1'"
         }, {
           "name" : "column_name",
           "value" : "'p_string'"
@@ -2903,7 +2953,7 @@
       "ports" : {
         "inputs" : [ {
           "id" : "XAp9Bs6Ib2wxHHVu6VVBw",
-          "slug" : "Reformat_4"
+          "slug" : "parent_transform_deduplicate_1"
         } ],
         "outputs" : [ {
           "id" : "ChsoTsbsVNtPPnh6Xle9e$$MINeMWhGDR_JhvHtU6NgV",
@@ -2950,12 +3000,6 @@
     "sourcePort" : "ZlxGVGejhW_BHcxMwuIuV",
     "target" : "AGlhavbtTmqhqRCk-Jiqc$$oKqDNk2iu9AyeRUEK8ls8",
     "targetPort" : "y1pqO2tB52lLa6a7FlkfY$$ZMLu-qC7h7LVI_sQZqzDG"
-  }, {
-    "id" : "WmyCIfhXCGn2uLzCLYUmJ$$bCvKtn-i737SDCW0ZCdAM",
-    "source" : "Reformat_4##XBISOqKd",
-    "sourcePort" : "nD4799gL",
-    "target" : "71EQxFF3BjvUMauTIKLq_$$QT6I3C8dlcgA5jR0aRKRI",
-    "targetPort" : "XAp9Bs6Ib2wxHHVu6VVBw"
   }, {
     "id" : "O5Gba-ZB0HWraLYLJpsBa",
     "source" : "71EQxFF3BjvUMauTIKLq_$$QT6I3C8dlcgA5jR0aRKRI",
@@ -3046,6 +3090,18 @@
     "sourcePort" : "Hwngfm6PJzTDz17lceTro$$bQKAUfmtg6DmLWqM3xx8i",
     "target" : "SQLStatement_2##USku5MrB",
     "targetPort" : "Y838ZTpd"
+  }, {
+    "id" : "JBYc0RV3KPCYG4BmfP3lu$$KJg0UMDKFJ_8ePUf38oOe",
+    "source" : "i29jFRkxbfV_1OO9cqbE5$$uWYJxNOoZNjLiJyempqoc",
+    "sourcePort" : "kNGyuAWI2nxqtdLUX9xR6$$ocf9A2hx0yOSsOcAh-8AG",
+    "target" : "71EQxFF3BjvUMauTIKLq_$$QT6I3C8dlcgA5jR0aRKRI",
+    "targetPort" : "XAp9Bs6Ib2wxHHVu6VVBw"
+  }, {
+    "id" : "xJFKUc6B26pfgq5KoUjoK",
+    "source" : "Reformat_4##XBISOqKd",
+    "sourcePort" : "nD4799gL",
+    "target" : "i29jFRkxbfV_1OO9cqbE5$$uWYJxNOoZNjLiJyempqoc",
+    "targetPort" : "wJvbiqWeB11he9v6TnNcs$$JCyZxEy4tiAB8M0q6UoHd"
   } ],
   "component" : "Model"
 }
