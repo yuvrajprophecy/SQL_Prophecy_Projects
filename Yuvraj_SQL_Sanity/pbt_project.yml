@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: v3.2.5.0-4
+version: v3.2.6.0-1
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -561,4 +561,6 @@ sqlPipeline:
   createdAt: '2023-04-15 08:21:42'
 dependencies: '[]'
 projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}
