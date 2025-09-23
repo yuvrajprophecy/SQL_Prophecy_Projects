@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mbkc8nnu__sanity_parent_orchestration_pipeline_1__Join_1",
+    "alias": "prophecy_tmp__mc24podo__sanity_parent_orchestration_pipeline_1__Join_1",
     "database": "hive_metastore",
     "schema": "qa_db_warehouse"
   })
@@ -11,7 +11,7 @@ WITH S3Source_1 AS (
 
   SELECT * 
   
-  FROM {{ source('prophecy_tmp_source__sanity_parent_orchestration_pipeline_1', 'prophecy_tmp__mbkc8nnu__sanity_parent_orchestration_pipeline_1__S3Source_1') }}
+  FROM {{ source('prophecy_tmp_source__sanity_parent_orchestration_pipeline_1', 'prophecy_tmp__mc24podo__sanity_parent_orchestration_pipeline_1__S3Source_1') }}
 
 ),
 

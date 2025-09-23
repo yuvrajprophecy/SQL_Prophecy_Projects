@@ -68,7 +68,7 @@ with DAG():
         task_id = "S3Source_1", 
         component = "Dataset", 
         table = {
-          "name": "prophecy_tmp__mbkc8nnu__sanity_parent_orchestration_pipeline_1__S3Source_1", 
+          "name": "prophecy_tmp__mc24podo__sanity_parent_orchestration_pipeline_1__S3Source_1", 
           "sourceType": "Source", 
           "sourceName": "prophecy_tmp_source__sanity_parent_orchestration_pipeline_1", 
           "alias": ""
