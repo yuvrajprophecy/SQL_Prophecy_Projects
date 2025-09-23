@@ -2,8 +2,8 @@
   config({    
     "materialized": "table",
     "alias": "prophecy__temp_sanity_parent_orchestration_pipeline_1_post_Join_1_0",
-    "database": "hive_metastore",
-    "schema": "qa_db_warehouse"
+    "database": "qa_team",
+    "schema": "qa_database"
   })
 }}
 
