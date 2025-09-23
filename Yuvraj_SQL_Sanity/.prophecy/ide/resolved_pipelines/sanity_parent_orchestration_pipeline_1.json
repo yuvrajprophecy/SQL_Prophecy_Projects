@@ -145,7 +145,28 @@
               }
             } ]
           },
-          "slug" : "output_port_0"
+          "slug" : "output_port_0",
+          "dataExplorerProps" : {
+            "sorts" : [ ],
+            "filter" : {
+              "type" : "Composite",
+              "op" : {
+                "type" : "AND"
+              },
+              "filters" : [ {
+                "lhs" : {
+                  "type" : "Field",
+                  "value" : "Variable_category"
+                },
+                "type" : "Binary",
+                "op" : "=",
+                "rhs" : {
+                  "type" : "Literal",
+                  "value" : "'Financial performance'"
+                }
+              } ]
+            }
+          }
         } ],
         "isCustomOutputSchema" : false
       }

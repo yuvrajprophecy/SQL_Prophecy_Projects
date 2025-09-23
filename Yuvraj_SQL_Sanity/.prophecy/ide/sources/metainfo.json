@@ -82144,7 +82144,7 @@
   "dependenciesContainer" : {
     "dependencies" : { },
     "prophecyProjectDependencies" : {
-      "https://github.com/prophecy-io/databricks-sql-basics" : "22363"
+      "https://github.com/prophecy-io/prophecy-basics" : "64560"
     }
   },
   "entitiesToSync" : [ {
