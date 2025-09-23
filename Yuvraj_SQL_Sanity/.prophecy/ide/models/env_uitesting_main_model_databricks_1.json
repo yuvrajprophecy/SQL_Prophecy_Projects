@@ -126,7 +126,7 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned",
-        "x" : 380,
+        "x" : 320,
         "y" : -120,
         "phase" : 0
       },
