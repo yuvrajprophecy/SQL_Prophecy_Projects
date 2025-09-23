@@ -119,8 +119,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned",
-        "x" : 420,
-        "y" : -80,
+        "x" : 260,
+        "y" : -40,
         "phase" : 0
       },
       "properties" : {
@@ -1327,8 +1327,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_partitioned",
-        "x" : 80,
-        "y" : 200,
+        "x" : 260,
+        "y" : 500,
         "phase" : 0
       },
       "properties" : {
@@ -2613,8 +2613,8 @@
       "metadata" : {
         "label" : "parent_transform_deduplicate_1",
         "slug" : "parent_transform_deduplicate_1",
-        "x" : 1360,
-        "y" : 300,
+        "x" : 1440,
+        "y" : 420,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Streamlines and removes duplicates from a dataset for improved data quality."
