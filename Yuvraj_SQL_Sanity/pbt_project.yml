@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: 4.1.0-3
+version: v4.1.0-4
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -862,6 +862,14 @@ sqlSources:
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-04-15 08:50:11'
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__sanity_parent_orchestration_pipeline_1:
+    name: prophecy_tmp_source__sanity_parent_orchestration_pipeline_1
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/sanity_parent_orchestration_pipeline_1/schema.yml
+    createdAt: '2025-06-06 04:46:56'
+    tables: []
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
@@ -896,7 +904,6 @@ sqlOrchestratorPipelines:
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
-    - models/sanity_parent_orchestration_pipeline_1/model_sanity_parent_orchestration_pipeline_1_SQLStatement_1.sql
     - models/sanity_parent_orchestration_pipeline_1/model_sanity_parent_orchestration_pipeline_1_Join_1.sql
     - models/sanity_parent_orchestration_pipeline_1/schema.yml
     - .prophecy/ide/pipelines/sanity_parent_orchestration_pipeline_1.json

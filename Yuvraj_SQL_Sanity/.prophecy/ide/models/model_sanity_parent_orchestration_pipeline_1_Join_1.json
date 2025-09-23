@@ -1,0 +1,591 @@
+{
+  "id" : "model_sanity_parent_orchestration_pipeline_1_Join_1",
+  "metainfo" : {
+    "label" : "model_sanity_parent_orchestration_pipeline_1_Join_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__Join_1\"",
+        "materialized" : "table",
+        "database" : "\"hive_metastore\"",
+        "schema" : "\"qa_db_warehouse\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__S3Source_1" : {
+      "id" : "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__S3Source_1",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "S3Source_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__S3Source_1",
+          "sourceType" : "Source",
+          "sourceName" : "prophecy_tmp_source__sanity_parent_orchestration_pipeline_1",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "output_port_0_1",
+          "slug" : "output_port_0_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3" : {
+      "id" : "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_1",
+        "x" : 1280,
+        "y" : 180,
+        "phase" : 0
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.Year!=in1.p_int"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.Year"
+          },
+          "alias" : "Year",
+          "_row_id" : "946204249"
+        }, {
+          "expression" : {
+            "expression" : "in0.Industry_aggregation_NZSIOC"
+          },
+          "alias" : "Industry_aggregation_NZSIOC",
+          "_row_id" : "1176669989"
+        }, {
+          "expression" : {
+            "expression" : "in0.Industry_code_NZSIOC"
+          },
+          "alias" : "Industry_code_NZSIOC",
+          "_row_id" : "512373631"
+        }, {
+          "expression" : {
+            "expression" : "in0.Industry_name_NZSIOC"
+          },
+          "alias" : "Industry_name_NZSIOC",
+          "_row_id" : "800819083"
+        }, {
+          "expression" : {
+            "expression" : "in0.Units"
+          },
+          "alias" : "Units",
+          "_row_id" : "1265429051"
+        }, {
+          "expression" : {
+            "expression" : "in0.Variable_code"
+          },
+          "alias" : "Variable_code",
+          "_row_id" : "408359860"
+        }, {
+          "expression" : {
+            "expression" : "in0.Variable_name"
+          },
+          "alias" : "Variable_name",
+          "_row_id" : "1184240860"
+        }, {
+          "expression" : {
+            "expression" : "in0.Variable_category"
+          },
+          "alias" : "Variable_category",
+          "_row_id" : "91409689"
+        }, {
+          "expression" : {
+            "expression" : "in0.Value"
+          },
+          "alias" : "Value",
+          "_row_id" : "868772804"
+        }, {
+          "expression" : {
+            "expression" : "in0.Industry_code_ANZSIC06"
+          },
+          "alias" : "Industry_code_ANZSIC06",
+          "_row_id" : "1794245626"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_array"
+          },
+          "alias" : "c_array",
+          "_row_id" : "1815491843"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_struct"
+          },
+          "alias" : "c_struct",
+          "_row_id" : "41391956"
+        }, {
+          "expression" : {
+            "expression" : "in1.p_string"
+          },
+          "alias" : "p_string",
+          "_row_id" : "1871610112"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_int"
+          },
+          "alias" : "c_int",
+          "_row_id" : "611720632"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_float"
+          },
+          "alias" : "c_float",
+          "_row_id" : "1740915852"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_boolean"
+          },
+          "alias" : "c_boolean",
+          "_row_id" : "2101590630"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_double"
+          },
+          "alias" : "c_double",
+          "_row_id" : "645177296"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_id"
+          },
+          "alias" : "c_id",
+          "_row_id" : "9649701"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb##p_int", "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb##c_array", "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb##c_struct", "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb##p_string", "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb##c_int", "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb##c_float", "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb##c_boolean", "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb##c_double", "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb##c_id" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Nd30xkdejYA_DOGMKAZPG$$tkEq_9HsXNH-PnaCnHQIR",
+          "slug" : "in0"
+        }, {
+          "id" : "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "pBAG6B4rpqDXJ1-jMk23_$$0Eg0ANSqHqWBpQW2FlPYH",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "vEkqVS8Z1AmXW7KABrJVw$$pXjeU3HhbDpmJUgANqYTJ" : {
+      "id" : "vEkqVS8Z1AmXW7KABrJVw$$pXjeU3HhbDpmJUgANqYTJ",
+      "component" : "SetOperation",
+      "metadata" : {
+        "label" : "SetOperation_1",
+        "x" : 920,
+        "y" : 180,
+        "phase" : 0
+      },
+      "properties" : {
+        "operationType" : "union",
+        "preserveDuplicates" : false,
+        "useMinus" : false,
+        "inputAliases" : [ "in0", "in1" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-RLXmqRljLrFIQkmH6Gzp$$yNDdgpTohS76pJ5Bmy08Q",
+          "slug" : "in0"
+        }, {
+          "id" : "t6vA2gZek9DuDWC0kKyO9$$bRO8XO3jjlkpdzWUmowKt",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "dC53X80CkVa4YDAQMtNF5$$_mLXR8OsEBMaqmGRFLYz9",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "SVTxwjzsOk-WJW6HXIFrV$$AQiyLagn_deyQK_qpZXsQ" : {
+      "id" : "SVTxwjzsOk-WJW6HXIFrV$$AQiyLagn_deyQK_qpZXsQ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "industry_data_by_year",
+        "x" : 600,
+        "y" : 180,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ##Year", "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ##Industry_aggregation_NZSIOC", "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ##Industry_code_NZSIOC", "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ##Industry_name_NZSIOC", "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ##Units", "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ##Variable_code", "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ##Variable_name", "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ##Variable_category", "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ##Value", "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ##Industry_code_ANZSIC06" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "Year"
+          },
+          "alias" : "Year",
+          "_row_id" : "734491227"
+        }, {
+          "expression" : {
+            "expression" : "Industry_aggregation_NZSIOC"
+          },
+          "alias" : "Industry_aggregation_NZSIOC",
+          "_row_id" : "272373540"
+        }, {
+          "expression" : {
+            "expression" : "Industry_code_NZSIOC"
+          },
+          "alias" : "Industry_code_NZSIOC",
+          "_row_id" : "1826467208"
+        }, {
+          "expression" : {
+            "expression" : "Industry_name_NZSIOC"
+          },
+          "alias" : "Industry_name_NZSIOC",
+          "_row_id" : "514055851"
+        }, {
+          "expression" : {
+            "expression" : "Units"
+          },
+          "alias" : "Units",
+          "_row_id" : "724308560"
+        }, {
+          "expression" : {
+            "expression" : "Variable_code"
+          },
+          "alias" : "Variable_code",
+          "_row_id" : "701552096"
+        }, {
+          "expression" : {
+            "expression" : "Variable_name"
+          },
+          "alias" : "Variable_name",
+          "_row_id" : "1161051806"
+        }, {
+          "expression" : {
+            "expression" : "Variable_category"
+          },
+          "alias" : "Variable_category",
+          "_row_id" : "1965703473"
+        }, {
+          "expression" : {
+            "expression" : "Value"
+          },
+          "alias" : "Value",
+          "_row_id" : "630174067"
+        }, {
+          "expression" : {
+            "expression" : "Industry_code_ANZSIC06"
+          },
+          "alias" : "Industry_code_ANZSIC06",
+          "_row_id" : "1112211330"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "uPbvNTg99hNuk_Mq-ZKtJ$$z4NuCmzaIdZt1Ije9tYM-",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN" : {
+      "id" : "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_1",
+        "x" : 1080,
+        "y" : 100,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select * from SetOperation_1"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BDQjFitT9s3pGzBLcqIn8$$xTrJUaCuCn5HtErMyJ8I6",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "4-bMiI15i2WdKXxwsrDn8$$a8xqq7j9cmS8Js6jgm_Jn",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "m9RlZSSA59AYGHcOZtxpI$$O0r3hyw-0nCleid4yXPYw" : {
+      "id" : "m9RlZSSA59AYGHcOZtxpI$$O0r3hyw-0nCleid4yXPYw",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "ordered_by_year",
+        "x" : 400,
+        "y" : 180,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "hbC8g47rNx88OHrTIVAF-$$mGhAMktxY-5M3l8aoo0wC##Year", "hbC8g47rNx88OHrTIVAF-$$mGhAMktxY-5M3l8aoo0wC##Industry_aggregation_NZSIOC" ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : "Year"
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : "Industry_aggregation_NZSIOC"
+          },
+          "sortType" : "desc"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "hbC8g47rNx88OHrTIVAF-$$mGhAMktxY-5M3l8aoo0wC",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "bGB8Rt7cMB_E2yDDeYfze$$WJQ1yOgLi815zxxskxFBC",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ChOk4BugA7oTy_Cy4iIFX$$Ysy_XjUnCbgHoLvcxZXfQ" : {
+      "id" : "ChOk4BugA7oTy_Cy4iIFX$$Ysy_XjUnCbgHoLvcxZXfQ",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "Aggregate_1",
+        "x" : 760,
+        "y" : 180,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "any_value(Year)"
+          },
+          "alias" : "Year",
+          "_row_id" : "1242836399"
+        }, {
+          "expression" : {
+            "expression" : "any_value(Industry_aggregation_NZSIOC)"
+          },
+          "alias" : "Industry_aggregation_NZSIOC",
+          "_row_id" : "1246450168"
+        }, {
+          "expression" : {
+            "expression" : "any_value(Industry_code_NZSIOC)"
+          },
+          "alias" : "Industry_code_NZSIOC",
+          "_row_id" : "1325563384"
+        }, {
+          "expression" : {
+            "expression" : "any_value(Industry_name_NZSIOC)"
+          },
+          "alias" : "Industry_name_NZSIOC",
+          "_row_id" : "1085368753"
+        }, {
+          "expression" : {
+            "expression" : "any_value(Units)"
+          },
+          "alias" : "Units",
+          "_row_id" : "547542453"
+        }, {
+          "expression" : {
+            "expression" : "any_value(Variable_code)"
+          },
+          "alias" : "Variable_code",
+          "_row_id" : "600846907"
+        }, {
+          "expression" : {
+            "expression" : "any_value(Variable_name)"
+          },
+          "alias" : "Variable_name",
+          "_row_id" : "896049477"
+        }, {
+          "expression" : {
+            "expression" : "any_value(Variable_category)"
+          },
+          "alias" : "Variable_category",
+          "_row_id" : "1608692147"
+        }, {
+          "expression" : {
+            "expression" : "any_value(Value)"
+          },
+          "alias" : "Value",
+          "_row_id" : "925564803"
+        }, {
+          "expression" : {
+            "expression" : "any_value(Industry_code_ANZSIC06)"
+          },
+          "alias" : "Industry_code_ANZSIC06",
+          "_row_id" : "1197268180"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA##Year", "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA##Industry_aggregation_NZSIOC", "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA##Industry_code_NZSIOC", "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA##Industry_name_NZSIOC", "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA##Units", "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA##Variable_code", "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA##Variable_name", "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA##Variable_category", "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA##Value", "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA##Industry_code_ANZSIC06" ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "Year"
+          },
+          "alias" : "",
+          "_row_id" : "zqDhM9r1l6"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "PHCamDXe6KE8DHdR1v3nq$$hI1vBMe_riVakmkFHNDjm",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "hM_3DdNi-bqq8MhaIN0M7$$r5jocjn56mDoXiPocpU0m" : {
+      "id" : "hM_3DdNi-bqq8MhaIN0M7$$r5jocjn56mDoXiPocpU0m",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "env_uitesting_main_model_databricks_1_1",
+        "x" : 920,
+        "y" : 360,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "env_uitesting_main_model_databricks_1",
+          "sourceType" : "Model",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9bUwsF7d-ACLOowFhIwLI$$jgu5Szf9W126ohlh1anMR",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "uPesk6KgnrinfnkG-nutq$$0HwNCPb80A3p__aqZomaS",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__Join_1" : {
+      "id" : "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__Join_1",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "Join_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM Join_1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1_1",
+          "slug" : "input_port_1_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1_1",
+          "slug" : "output_port_1_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3_prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__Join_1",
+    "source" : "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3",
+    "sourcePort" : "pBAG6B4rpqDXJ1-jMk23_$$0Eg0ANSqHqWBpQW2FlPYH",
+    "target" : "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__Join_1",
+    "targetPort" : "input_port_1_1"
+  }, {
+    "id" : "icPEC2ohz8kZNfMYNRKyA",
+    "source" : "hM_3DdNi-bqq8MhaIN0M7$$r5jocjn56mDoXiPocpU0m",
+    "sourcePort" : "uPesk6KgnrinfnkG-nutq$$0HwNCPb80A3p__aqZomaS",
+    "target" : "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3",
+    "targetPort" : "8-feNove7Bs0VviWp3xX9$$T71qBqKi7bcktRx0Y-Tmb"
+  }, {
+    "id" : "9KLZBnJ06cwqaVpWVoRNU$$2LsWBYBjCslCzjn6G1AEU",
+    "source" : "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN",
+    "sourcePort" : "4-bMiI15i2WdKXxwsrDn8$$a8xqq7j9cmS8Js6jgm_Jn",
+    "target" : "jBmcV8hQTaT_ItXBAOitW$$Sbaj4Wq5dDJJRNqFLths3",
+    "targetPort" : "Nd30xkdejYA_DOGMKAZPG$$tkEq_9HsXNH-PnaCnHQIR"
+  }, {
+    "id" : "z-kVmlsrNla3NHaBw3eFD",
+    "source" : "vEkqVS8Z1AmXW7KABrJVw$$pXjeU3HhbDpmJUgANqYTJ",
+    "sourcePort" : "dC53X80CkVa4YDAQMtNF5$$_mLXR8OsEBMaqmGRFLYz9",
+    "target" : "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN",
+    "targetPort" : "BDQjFitT9s3pGzBLcqIn8$$xTrJUaCuCn5HtErMyJ8I6"
+  }, {
+    "id" : "wdAcNnkYOVa9giWB4NAOr$$TFiTDdy5IkvWZMSswimqD",
+    "source" : "ChOk4BugA7oTy_Cy4iIFX$$Ysy_XjUnCbgHoLvcxZXfQ",
+    "sourcePort" : "PHCamDXe6KE8DHdR1v3nq$$hI1vBMe_riVakmkFHNDjm",
+    "target" : "vEkqVS8Z1AmXW7KABrJVw$$pXjeU3HhbDpmJUgANqYTJ",
+    "targetPort" : "-RLXmqRljLrFIQkmH6Gzp$$yNDdgpTohS76pJ5Bmy08Q"
+  }, {
+    "id" : "WpGLahorVh67hDRxqqXua",
+    "source" : "ChOk4BugA7oTy_Cy4iIFX$$Ysy_XjUnCbgHoLvcxZXfQ",
+    "sourcePort" : "PHCamDXe6KE8DHdR1v3nq$$hI1vBMe_riVakmkFHNDjm",
+    "target" : "vEkqVS8Z1AmXW7KABrJVw$$pXjeU3HhbDpmJUgANqYTJ",
+    "targetPort" : "t6vA2gZek9DuDWC0kKyO9$$bRO8XO3jjlkpdzWUmowKt"
+  }, {
+    "id" : "cXjIrfK9EJmFw6Q1ES9Kb$$tu1sPYCPX6t5sW7umWbzd",
+    "source" : "SVTxwjzsOk-WJW6HXIFrV$$AQiyLagn_deyQK_qpZXsQ",
+    "sourcePort" : "uPbvNTg99hNuk_Mq-ZKtJ$$z4NuCmzaIdZt1Ije9tYM-",
+    "target" : "ChOk4BugA7oTy_Cy4iIFX$$Ysy_XjUnCbgHoLvcxZXfQ",
+    "targetPort" : "J8BuGsnd84bJrXkbmTQpD$$M9iD2yScm3RWfbp_Z6lYA"
+  }, {
+    "id" : "p-bX9sOS0lBIbTDoD-CuF$$nboUbfovjq4GKZkko9ZWq",
+    "source" : "m9RlZSSA59AYGHcOZtxpI$$O0r3hyw-0nCleid4yXPYw",
+    "sourcePort" : "bGB8Rt7cMB_E2yDDeYfze$$WJQ1yOgLi815zxxskxFBC",
+    "target" : "SVTxwjzsOk-WJW6HXIFrV$$AQiyLagn_deyQK_qpZXsQ",
+    "targetPort" : "3GJQ5BE6pT_AekQrGQJ8H$$Jy_WVb-XM5VtupVwD5uNZ"
+  }, {
+    "id" : "conn_prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__S3Source_1_m9RlZSSA59AYGHcOZtxpI$$O0r3hyw-0nCleid4yXPYw_hbC8g47rNx88OHrTIVAF-$$mGhAMktxY-5M3l8aoo0wC",
+    "source" : "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__S3Source_1",
+    "sourcePort" : "output_port_0_1",
+    "target" : "m9RlZSSA59AYGHcOZtxpI$$O0r3hyw-0nCleid4yXPYw",
+    "targetPort" : "hbC8g47rNx88OHrTIVAF-$$mGhAMktxY-5M3l8aoo0wC"
+  } ],
+  "component" : "Model"
+}

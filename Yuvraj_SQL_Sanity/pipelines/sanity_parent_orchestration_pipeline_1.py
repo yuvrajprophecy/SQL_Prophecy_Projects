@@ -1,23 +1,18 @@
 with DAG():
-    model_sanity_parent_orchestration_pipeline_1_Join_1 = Task(
-        task_id = "model_sanity_parent_orchestration_pipeline_1_Join_1", 
-        component = "Model", 
-        modelName = "model_sanity_parent_orchestration_pipeline_1_Join_1"
-    )
     S3Source_1 = Task(
         task_id = "S3Source_1", 
         component = "Dataset", 
         table = {
-          "name": "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0", 
+          "name": "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__S3Source_1", 
           "sourceType": "Source", 
-          "sourceName": "prophecy__temp_sanity_parent_orchestration_pipeline_1_source", 
+          "sourceName": "prophecy_tmp_source__sanity_parent_orchestration_pipeline_1", 
           "alias": ""
         }
     )
-    model_sanity_parent_orchestration_pipeline_1_SQLStatement_1 = Task(
-        task_id = "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1", 
+    model_sanity_parent_orchestration_pipeline_1_Join_1 = Task(
+        task_id = "model_sanity_parent_orchestration_pipeline_1_Join_1", 
         component = "Model", 
-        modelName = "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1"
+        modelName = "model_sanity_parent_orchestration_pipeline_1_Join_1"
     )
     S3Source_1 = SourceTask(
         task_id = "S3Source_1", 
@@ -93,10 +88,6 @@ with DAG():
         fileFormat = "xlsx"
     )
     S3Source_1.out0 >> S3Source_1.input_port_0_1
-    (
-        model_sanity_parent_orchestration_pipeline_1_SQLStatement_1.out_1
-        >> model_sanity_parent_orchestration_pipeline_1_Join_1.in_1
-    )
-    env_uitesting_main_model_databricks_1_1.out >> model_sanity_parent_orchestration_pipeline_1_Join_1.in_1
-    model_sanity_parent_orchestration_pipeline_1_Join_1.out_1 >> send_danger_email.in0
-    S3Source_1.output_port_0_1 >> model_sanity_parent_orchestration_pipeline_1_SQLStatement_1.in_1
+    env_uitesting_main_model_databricks_1_1.out >> model_sanity_parent_orchestration_pipeline_1_Join_1.in_0
+    S3Source_1.output_port_0_1 >> model_sanity_parent_orchestration_pipeline_1_Join_1.in_2
+    model_sanity_parent_orchestration_pipeline_1_Join_1.out_0 >> send_danger_email.in0
