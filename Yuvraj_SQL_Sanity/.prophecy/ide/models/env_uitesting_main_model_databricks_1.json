@@ -75,6 +75,7 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT * \n\nFROM SQLStatement_2\n",
+        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -125,8 +126,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned",
-        "x" : 260,
-        "y" : -40,
+        "x" : 380,
+        "y" : -120,
         "phase" : 0
       },
       "properties" : {

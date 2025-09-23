@@ -705,6 +705,8 @@ Transpose_1 AS (
         'pre_c_struct', 
         'pre_c_array'
       ], 
+      'Name', 
+      'Value', 
       [
         'pre_c_tinyint', 
         'pre_c_smallint', 
@@ -782,7 +784,11 @@ DataCleansing_1 AS (
       true, 
       true, 
       true, 
-      true
+      true, 
+      false, 
+      '1970-01-01', 
+      false, 
+      '1970-01-01 00:00:00.0'
     )
   }}
 
