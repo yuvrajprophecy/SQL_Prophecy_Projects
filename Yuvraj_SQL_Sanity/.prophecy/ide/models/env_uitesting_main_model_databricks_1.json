@@ -786,7 +786,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_string", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_float", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_int", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_bigint" ],
+            "columnsSelector" : [ "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_array", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_struct", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_struct.city", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_string", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_float", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_int", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_bigint" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "(1 != 2)\nor (true != NULL)\nor (NULL != NULL)\nor (1 < 2)\nor (2 <= 2)\nor (2 <=> 2)\nor ((2 % 1.8) == 1)\nor (to_date('2009-07-30 04:17:52') < to_date('2009-07-30 04:17:52'))\nor (add_months('2016-08-31', 1) < add_months('2017-08-31', 3))\nor (true and false)\nor array_contains(array_distinct(array(1, 2, 3)), 2)\nor array_contains(array_except(array(1, 2, 3), array(1, 3, 5)), 2)\nor array_contains(array_intersect(array(1, 2, 3), array(1, 3, 5)), 10)\nor (array_join(array('hello', NULL, 'world'), ' ', ',') LIKE '%hello%')\nor (array_max(array(1, 20, NULL, 3)) > 10)\nor (array_min(array(1, 20, NULL, 3)) > 20)\nor array_contains(array_remove(array(1, 2, 3, NULL, 3), 3), 3)\nor array_contains(array_repeat(5, 2), 6)\nor array_contains(array_union(array(1, 2, 3), array(1, 3, 5)), 10)\nor arrays_overlap(array(1, 2, 3), array(3, 4, 5))\nor (10 BETWEEN 2 AND 20)\nor contains('Spark SQL', 'Spark')\nor endswith('Spark SQL', 'SQL')\nor (\n     EXISTS(array(1, 2, 3), \n     x -> x % 2 == 0)\n   )\nor array_contains(filter(array(1, 2, 3), \n   x -> x % 2 == 1), 5)\nor array_contains(flatten(array(array(1, 2), array(3, 4))), 10)\nor forall(array(1, 2, 3), \n   x -> x % 2 == 0)\nor ilike('Spark', '_Park')\nor (1 IN (2, 3, 4))\nor (isnan(CAST('NaN' AS double)))\nor isnotnull(1)\nor isnull(1)\nor array_contains(json_object_keys('{\"key\": \"value\"}'), 'key1')\nor like('Spark', '_park')\nor map_contains_key(map(1, 'a', 2, 'b'), 1)\nor map_contains_key(map_concat(map(1, 'a', 2, 'b'), map(3, 'c')), 4)\nor map_contains_key(map_filter(map(1, 0, 2, 2, 3, -1), \n   (k, v) -> k > v), 3)\nor map_contains_key(map_from_arrays(array(1.0, 3.0), array('2', '4')), 2)\nor map_contains_key(map_from_entries(array(struct(1, 'a'), struct(2, 'b'))), 1)\nor array_contains(map_keys(map(1, 'a', 2, 'b')), 2)\nor array_contains(map_values(map(1, 'a', 2, 'b')), 'a')\nor map_contains_key(map_zip_with(map(1, 'a', 2, 'b'), map(1, 'x', 2, 'y'), \n   (k, v1, v2) -> concat(v1, v2)), 1)\nor (named_struct('a', 1, 'b', 2) IN (named_struct('a', 1, 'b', 1), named_struct('a', 1, 'b', 3)))\nor (NOT true)\nor array_contains(regexp_extract_all('100-200, 300-400', '(\\\\d+)-(\\\\d+)', 1), '100')\nor array_contains(sequence(1, 5), 4)\nor array_contains(shuffle(array(1, 20, 3, 5)), 10)\nor array_contains(slice(array(1, 2, 3, 4), 2, 2), 4)\nor array_contains(sort_array(array('b', 'd', NULL, 'c', 'a'), true), 'b')\nor array_contains(split('oneAtwoBthreeC', '[ABC]'), 'one')\nor startswith('Spark SQL', 'Spark')\nor map_contains_key(str_to_map('a:1,b:2,c:3', ',', ':'), 'a')\nor array_contains(transform(array(1, 2, 3), \n   x -> x + 1), 1)\nor map_contains_key(transform_keys(map_from_arrays(array(1, 2, 3), array(1, 2, 3)), \n   (k, v) -> k + 1), 1)\nor map_contains_key(transform_values(map_from_arrays(array(1, 2, 3), array(1, 2, 3)), \n   (k, v) -> v + 1), 2)\nor array_contains(xpath('<a><b>b1</b><b>b2</b><b>b3</b><c>c1</c><c>c2</c></a>', 'a/b/text()'), 'a')\nor xpath_boolean('<a><b>1</b></a>', 'a/b')\nor array_contains(zip_with(array(1, 2), array(3, 4), \n   (x, y) -> x + y), 1)"
@@ -1733,7 +1733,7 @@
             "macroDependencies" : [ ]
           },
           "properties" : {
-            "columnsSelector" : [ "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##p_int", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##p_string", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_string", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_int", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_bigint", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_smallint", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_tinyint", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_float", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_boolean", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_array", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_double", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_struct", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_base_dependency_macro", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_current_project_macro", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_dbt_date", "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor##c_struct.city" ],
+            "columnsSelector" : [ ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "p_int"
@@ -2526,12 +2526,6 @@
         "target" : "sN-wy6wUw1G45fNTStnR3$$FV-OWZMIpKNGWulSWX6LI",
         "targetPort" : "WDQ-lvziuaXOG-D9l5sBw$$UCukebNtqyH8f1cFP4LAh"
       }, {
-        "id" : "BArt0RDC_3qdIkePcxiiu",
-        "source" : "sN-wy6wUw1G45fNTStnR3$$FV-OWZMIpKNGWulSWX6LI",
-        "sourcePort" : "x161oy58aFZs7KFAehh2W$$0nUkC0g-ukjMUB9_VtGXr",
-        "target" : "ONKFkHXzcyM5zQM12qdI8$$q91RWdcbMbhkMcQmmauoH",
-        "targetPort" : "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor"
-      }, {
         "id" : "azpl2IcbWIbEgI3ZCSSvE",
         "source" : "Yj-UVSGgFvfmFR4K-mTBw$$Q088AQz_L3l10W0hPqUZE",
         "sourcePort" : "gdqhl8PbTtSP64ywpQQYR$$xtwpijm_Ori7D5uQJphxc",
@@ -2555,6 +2549,12 @@
         "sourcePort" : "XME9rOAGlkqJoovjUZNpR$$Ll8oo2tgdFu4uJKX8kWoL",
         "target" : "Yj-UVSGgFvfmFR4K-mTBw$$Q088AQz_L3l10W0hPqUZE",
         "targetPort" : "Hwngfm6PJzTDz17lceTro$$bQKAUfmtg6DmLWqM3xx8i"
+      }, {
+        "id" : "p2588dQdfNMpVNHBVoE55",
+        "source" : "sN-wy6wUw1G45fNTStnR3$$FV-OWZMIpKNGWulSWX6LI",
+        "sourcePort" : "x161oy58aFZs7KFAehh2W$$0nUkC0g-ukjMUB9_VtGXr",
+        "target" : "ONKFkHXzcyM5zQM12qdI8$$q91RWdcbMbhkMcQmmauoH",
+        "targetPort" : "qHktp55SXZHLSLt3idPfz$$mJUCZC8tbFlm5RgpTmKor"
       } ],
       "ports" : {
         "inputs" : [ {
@@ -2777,8 +2777,8 @@
       "metadata" : {
         "label" : "env_uitesting_main_model_databricks_2",
         "slug" : "env_uitesting_main_model_databricks_2",
-        "x" : 760,
-        "y" : 140,
+        "x" : 740,
+        "y" : 120,
         "phase" : 0
       },
       "properties" : {
