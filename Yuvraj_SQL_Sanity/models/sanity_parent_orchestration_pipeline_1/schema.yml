@@ -11,9 +11,9 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__Join_1"
+  - name: "prophecy_tmp__mbkc8nnu__sanity_parent_orchestration_pipeline_1__Join_1"
     tags:
     - "prophecy_temp"
-  - name: "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__S3Source_1"
+  - name: "prophecy_tmp__mbkc8nnu__sanity_parent_orchestration_pipeline_1__S3Source_1"
     tags:
     - "prophecy_temp"

@@ -1,14 +1,4 @@
 with DAG():
-    S3Source_1 = Task(
-        task_id = "S3Source_1", 
-        component = "Dataset", 
-        table = {
-          "name": "prophecy_tmp__mbkbpoaq__sanity_parent_orchestration_pipeline_1__S3Source_1", 
-          "sourceType": "Source", 
-          "sourceName": "prophecy_tmp_source__sanity_parent_orchestration_pipeline_1", 
-          "alias": ""
-        }
-    )
     model_sanity_parent_orchestration_pipeline_1_Join_1 = Task(
         task_id = "model_sanity_parent_orchestration_pipeline_1_Join_1", 
         component = "Model", 
@@ -73,6 +63,16 @@ with DAG():
         task_id = "env_uitesting_main_model_databricks_1_1", 
         component = "Model", 
         modelName = "env_uitesting_main_model_databricks_1"
+    )
+    S3Source_1 = Task(
+        task_id = "S3Source_1", 
+        component = "Dataset", 
+        table = {
+          "name": "prophecy_tmp__mbkc8nnu__sanity_parent_orchestration_pipeline_1__S3Source_1", 
+          "sourceType": "Source", 
+          "sourceName": "prophecy_tmp_source__sanity_parent_orchestration_pipeline_1", 
+          "alias": ""
+        }
     )
     send_danger_email = Task(
         task_id = "send_danger_email", 
