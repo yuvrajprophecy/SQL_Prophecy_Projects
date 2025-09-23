@@ -1,0 +1,336 @@
+{
+  "id" : "sanity_parent_orchestration_pipeline_1",
+  "metainfo" : {
+    "label" : "sanity_parent_orchestration_pipeline_1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    }
+  },
+  "processes" : {
+    "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0" : {
+      "id" : "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "S3Source_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0",
+          "sourceType" : "Source",
+          "sourceName" : "prophecy__temp_sanity_parent_orchestration_pipeline_1_source",
+          "alias" : ""
+        }
+      },
+      "visualMetaInfo" : {
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0_1",
+          "slug" : "input_port_0_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0_1",
+          "slug" : "output_port_0_1"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN" : {
+      "id" : "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy__temp_sanity_parent_orchestration_pipeline_1_post_SQLStatement_1_0", "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN", "vEkqVS8Z1AmXW7KABrJVw$$pXjeU3HhbDpmJUgANqYTJ", "ChOk4BugA7oTy_Cy4iIFX$$Ysy_XjUnCbgHoLvcxZXfQ", "SVTxwjzsOk-WJW6HXIFrV$$AQiyLagn_deyQK_qpZXsQ", "m9RlZSSA59AYGHcOZtxpI$$O0r3hyw-0nCleid4yXPYw", "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1_out_1",
+          "slug" : "out_1"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "_vSrbpCqSxQ_Qtfm8A80A" : {
+      "id" : "_vSrbpCqSxQ_Qtfm8A80A",
+      "component" : "OrchestrationSource",
+      "kind" : "S3Source",
+      "metadata" : {
+        "label" : "S3Source_1",
+        "x" : 220,
+        "y" : 180,
+        "phase" : 0
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "s3",
+          "properties" : {
+            "id" : "s3"
+          },
+          "type" : "connector"
+        },
+        "format" : {
+          "kind" : "csv",
+          "properties" : {
+            "header" : true,
+            "schema" : {
+              "fields" : [ {
+                "dataType" : {
+                  "type" : "Bigint"
+                },
+                "description" : "The year in which the data was collected.",
+                "name" : "Year"
+              }, {
+                "dataType" : {
+                  "type" : "String"
+                },
+                "description" : "The classification of industries based on the New Zealand Standard Industry Output Classification.",
+                "name" : "Industry_aggregation_NZSIOC"
+              }, {
+                "dataType" : {
+                  "type" : "String"
+                },
+                "description" : "Code representing the industry classification according to NZSIOC standards",
+                "name" : "Industry_code_NZSIOC"
+              }, {
+                "dataType" : {
+                  "type" : "String"
+                },
+                "description" : "Name of the industry as per the NZSIOC classification",
+                "name" : "Industry_name_NZSIOC"
+              }, {
+                "dataType" : {
+                  "type" : "String"
+                },
+                "description" : "The measurement units used for the data values",
+                "name" : "Units"
+              }, {
+                "dataType" : {
+                  "type" : "String"
+                },
+                "description" : "Code representing the specific variable being measured",
+                "name" : "Variable_code"
+              }, {
+                "dataType" : {
+                  "type" : "String"
+                },
+                "description" : "Name of the variable being measured in the dataset",
+                "name" : "Variable_name"
+              }, {
+                "dataType" : {
+                  "type" : "String"
+                },
+                "description" : "Category classification of the variable being measured",
+                "name" : "Variable_category"
+              }, {
+                "dataType" : {
+                  "type" : "String"
+                },
+                "description" : "The measured value associated with the industry data",
+                "name" : "Value"
+              }, {
+                "dataType" : {
+                  "type" : "String"
+                },
+                "description" : "The code representing the industry classification according to ANZSIC 2006 standards.",
+                "name" : "Industry_code_ANZSIC06"
+              } ],
+              "providerType" : "arrow"
+            },
+            "separator" : ","
+          }
+        },
+        "properties" : {
+          "filePath" : "/datasets/orchestration_datasets/csv/valid/9MB_annual-enterprise-survey-2023-financial-year-provisional.csv"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "0a48bb57-1edf-490a-a883-7ebec8a026f2",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "Year",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Units",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out0"
+        } ]
+      }
+    },
+    "bSp2BAeazUMeXNYr3jMIj$$F2uUDa4J2gWeJ6VJyyG6T" : {
+      "id" : "bSp2BAeazUMeXNYr3jMIj$$F2uUDa4J2gWeJ6VJyyG6T",
+      "component" : "Email",
+      "metadata" : {
+        "label" : "send_danger_email",
+        "x" : 1320,
+        "y" : 180
+      },
+      "properties" : {
+        "body" : "This is a dangerous email from sanity pipeline for parent databricks project",
+        "subject" : "This is a dangerous email from sanity pipeline for parent databricks project",
+        "includeData" : true,
+        "to" : [ "abhisheks@prophecy.io" ],
+        "bcc" : [ "abhisheks+bcc@prophecy.io" ],
+        "cc" : [ "abhisheks+cc@prophecy.io" ],
+        "connection" : {
+          "kind" : "smtp",
+          "properties" : {
+            "id" : "smtp"
+          },
+          "type" : "connector"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "JOXtSL4dHNARGh2BndgWS$$id-YxQ96Saec_RYzWsrGD",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Year",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Units",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "7p3eDzmf0Fbe6oIbO2AgC$$_L2RSYEWv1Q6StcawUyNF",
+    "source" : "_vSrbpCqSxQ_Qtfm8A80A",
+    "sourcePort" : "0a48bb57-1edf-490a-a883-7ebec8a026f2",
+    "target" : "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0",
+    "targetPort" : "input_port_0_1"
+  }, {
+    "id" : "conn_prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0_m9RlZSSA59AYGHcOZtxpI$$O0r3hyw-0nCleid4yXPYw_hbC8g47rNx88OHrTIVAF-$$mGhAMktxY-5M3l8aoo0wC",
+    "source" : "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0",
+    "sourcePort" : "output_port_0_1",
+    "target" : "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN",
+    "targetPort" : "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1_in_1"
+  }, {
+    "id" : "conn_mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN_bSp2BAeazUMeXNYr3jMIj$$F2uUDa4J2gWeJ6VJyyG6T",
+    "source" : "mh1Xl4VTWr1LpvUW01mMu$$xKu6DdxJzT6a32GuNlmmN",
+    "sourcePort" : "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1_out_1",
+    "target" : "bSp2BAeazUMeXNYr3jMIj$$F2uUDa4J2gWeJ6VJyyG6T",
+    "targetPort" : "JOXtSL4dHNARGh2BndgWS$$id-YxQ96Saec_RYzWsrGD"
+  } ],
+  "component" : "Pipeline"
+}

@@ -1,2 +1,21 @@
 ---
 version: 2
+models:
+- name: "model_sanity_parent_orchestration_pipeline_1_SQLStatement_1"
+  tags:
+  - "prophecy_temp"
+sources:
+- name: "prophecy__temp_sanity_parent_orchestration_pipeline_1_source"
+  database: "hive_metastore"
+  schema: "qa_db_warehouse"
+  tags:
+  - "prophecy_temp"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy__temp_sanity_parent_orchestration_pipeline_1_post_SQLStatement_1_0"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy__temp_sanity_parent_orchestration_pipeline_1_pre_ordered_by_year_0"
+    tags:
+    - "prophecy_temp"

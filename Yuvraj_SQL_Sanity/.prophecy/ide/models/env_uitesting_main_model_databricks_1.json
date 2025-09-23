@@ -15,7 +15,96 @@
         }
       }
     },
-    "version" : 3
+    "version" : 3,
+    "properties" : {
+      "name" : "env_uitesting_main_model_databricks_1",
+      "columns" : [ {
+        "name" : "p_int",
+        "dataType" : {
+          "type" : "Integer"
+        }
+      }, {
+        "name" : "p_string",
+        "dataType" : {
+          "type" : "String"
+        }
+      }, {
+        "name" : "c_string",
+        "dataType" : {
+          "type" : "String"
+        }
+      }, {
+        "name" : "c_int",
+        "dataType" : {
+          "type" : "Integer"
+        }
+      }, {
+        "name" : "c_bigint",
+        "dataType" : {
+          "type" : "Double"
+        }
+      }, {
+        "name" : "c_smallint",
+        "dataType" : {
+          "type" : "SmallInt"
+        }
+      }, {
+        "name" : "c_tinyint",
+        "dataType" : {
+          "type" : "TinyInt"
+        }
+      }, {
+        "name" : "c_float",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "c_boolean",
+        "dataType" : {
+          "type" : "Boolean"
+        }
+      }, {
+        "name" : "c_array",
+        "dataType" : {
+          "type" : "Array",
+          "dataType" : {
+            "type" : "String"
+          }
+        }
+      }, {
+        "name" : "c_double",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "c_struct",
+        "dataType" : {
+          "type" : "Struct",
+          "fields" : [ {
+            "name" : "city",
+            "dataType" : {
+              "type" : "String"
+            }
+          }, {
+            "name" : "state",
+            "dataType" : {
+              "type" : "String"
+            }
+          }, {
+            "name" : "pin",
+            "dataType" : {
+              "type" : "Bigint"
+            }
+          } ]
+        }
+      }, {
+        "name" : "c_id",
+        "dataType" : {
+          "type" : "Integer"
+        }
+      } ],
+      "providerType" : "databricks"
+    }
   },
   "processes" : {
     "SQLStatement_2##USku5MrB" : {
@@ -424,7 +513,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_array", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_struct", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_struct.city", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_string", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_float", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_int", "ketGEu29RLUd84Y5W5aYn$$-e1HvIGL35jGxUrCEJlAJ##c_bigint" ],
+            "columnsSelector" : [ ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "(1 != 2)\nor (true != NULL)\nor (NULL != NULL)\nor (1 < 2)\nor (2 <= 2)\nor (2 <=> 2)\nor ((2 % 1.8) == 1)\nor (to_date('2009-07-30 04:17:52') < to_date('2009-07-30 04:17:52'))\nor (add_months('2016-08-31', 1) < add_months('2017-08-31', 3))\nor (true and false)\nor array_contains(array_distinct(array(1, 2, 3)), 2)\nor array_contains(array_except(array(1, 2, 3), array(1, 3, 5)), 2)\nor array_contains(array_intersect(array(1, 2, 3), array(1, 3, 5)), 10)\nor (array_join(array('hello', NULL, 'world'), ' ', ',') LIKE '%hello%')\nor (array_max(array(1, 20, NULL, 3)) > 10)\nor (array_min(array(1, 20, NULL, 3)) > 20)\nor array_contains(array_remove(array(1, 2, 3, NULL, 3), 3), 3)\nor array_contains(array_repeat(5, 2), 6)\nor array_contains(array_union(array(1, 2, 3), array(1, 3, 5)), 10)\nor arrays_overlap(array(1, 2, 3), array(3, 4, 5))\nor (10 BETWEEN 2 AND 20)\nor contains('Spark SQL', 'Spark')\nor endswith('Spark SQL', 'SQL')\nor (\n     EXISTS(array(1, 2, 3), \n     x -> x % 2 == 0)\n   )\nor array_contains(filter(array(1, 2, 3), \n   x -> x % 2 == 1), 5)\nor array_contains(flatten(array(array(1, 2), array(3, 4))), 10)\nor forall(array(1, 2, 3), \n   x -> x % 2 == 0)\nor ilike('Spark', '_Park')\nor (1 IN (2, 3, 4))\nor (isnan(CAST('NaN' AS double)))\nor isnotnull(1)\nor isnull(1)\nor array_contains(json_object_keys('{\"key\": \"value\"}'), 'key1')\nor like('Spark', '_park')\nor map_contains_key(map(1, 'a', 2, 'b'), 1)\nor map_contains_key(map_concat(map(1, 'a', 2, 'b'), map(3, 'c')), 4)\nor map_contains_key(map_filter(map(1, 0, 2, 2, 3, -1), \n   (k, v) -> k > v), 3)\nor map_contains_key(map_from_arrays(array(1.0, 3.0), array('2', '4')), 2)\nor map_contains_key(map_from_entries(array(struct(1, 'a'), struct(2, 'b'))), 1)\nor array_contains(map_keys(map(1, 'a', 2, 'b')), 2)\nor array_contains(map_values(map(1, 'a', 2, 'b')), 'a')\nor map_contains_key(map_zip_with(map(1, 'a', 2, 'b'), map(1, 'x', 2, 'y'), \n   (k, v1, v2) -> concat(v1, v2)), 1)\nor (named_struct('a', 1, 'b', 2) IN (named_struct('a', 1, 'b', 1), named_struct('a', 1, 'b', 3)))\nor (NOT true)\nor array_contains(regexp_extract_all('100-200, 300-400', '(\\\\d+)-(\\\\d+)', 1), '100')\nor array_contains(sequence(1, 5), 4)\nor array_contains(shuffle(array(1, 20, 3, 5)), 10)\nor array_contains(slice(array(1, 2, 3, 4), 2, 2), 4)\nor array_contains(sort_array(array('b', 'd', NULL, 'c', 'a'), true), 'b')\nor array_contains(split('oneAtwoBthreeC', '[ABC]'), 'one')\nor startswith('Spark SQL', 'Spark')\nor map_contains_key(str_to_map('a:1,b:2,c:3', ',', ':'), 'a')\nor array_contains(transform(array(1, 2, 3), \n   x -> x + 1), 1)\nor map_contains_key(transform_keys(map_from_arrays(array(1, 2, 3), array(1, 2, 3)), \n   (k, v) -> k + 1), 1)\nor map_contains_key(transform_values(map_from_arrays(array(1, 2, 3), array(1, 2, 3)), \n   (k, v) -> v + 1), 2)\nor array_contains(xpath('<a><b>b1</b><b>b2</b><b>b3</b><c>c1</c><c>c2</c></a>', 'a/b/text()'), 'a')\nor xpath_boolean('<a><b>1</b></a>', 'a/b')\nor array_contains(zip_with(array(1, 2), array(3, 4), \n   (x, y) -> x + y), 1)"
@@ -1470,7 +1559,7 @@
               "_row_id" : "228142882"
             } ],
             "activeTab" : "conditions",
-            "columnsSelector" : [ "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_tinyint", "S1mq99arKKIOFyuDT46Xv$$bUIExYlaqz4I1RXi3t7c3##c_tinyint", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_smallint", "S1mq99arKKIOFyuDT46Xv$$bUIExYlaqz4I1RXi3t7c3##c_smallint", "N8rSwElzFvg82aCHLcLdH$$DOJX8zCMpArBwQSW472fY##c_tinyint", "N8rSwElzFvg82aCHLcLdH$$DOJX8zCMpArBwQSW472fY##p_int", "S1mq99arKKIOFyuDT46Xv$$bUIExYlaqz4I1RXi3t7c3##p_string", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_string", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_int", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_bigint", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_smallint", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_tinyint", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_float", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_boolean", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_array", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_double", "a3faHymU1MDf6rgwUJ4lG$$dGNyg1wfgOsTvPf6QFbdj##c_struct" ],
+            "columnsSelector" : [ ],
             "headAlias" : "all_type_non_partitioned"
           },
           "ports" : {
@@ -1654,12 +1743,13 @@
       "id" : "rl4y-E0DXaz-Uo0ONnlln$$zqluaA__60hvv8e-S-prP",
       "component" : "Filter",
       "metadata" : {
-        "label" : "Filter_1",
-        "slug" : "Filter_1",
+        "label" : "Filter_1asd",
+        "slug" : "Filter_1asd",
         "x" : 440,
         "y" : 300,
         "phase" : 0,
-        "macroDependencies" : [ ]
+        "macroDependencies" : [ ],
+        "isLabelGrayed" : false
       },
       "properties" : {
         "columnsSelector" : [ ],
@@ -1835,7 +1925,7 @@
           "_row_id" : "1442085606"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ "f2JPlGzH##c_tinyint", "EeAeHpSM##c_tinyint", "f2JPlGzH##c_smallint", "EeAeHpSM##c_smallint", "EeAeHpSM##c_int", "EeAeHpSM##p_int", "EeAeHpSM##p_string", "f2JPlGzH##c_string", "f2JPlGzH##c_int", "f2JPlGzH##c_bigint", "f2JPlGzH##c_smallint", "f2JPlGzH##c_tinyint", "f2JPlGzH##c_float", "f2JPlGzH##c_boolean", "f2JPlGzH##c_array", "f2JPlGzH##c_double", "f2JPlGzH##c_struct" ],
+        "columnsSelector" : [ ],
         "headAlias" : "all_type_non_partitioned"
       },
       "ports" : {
@@ -1952,7 +2042,7 @@
         "autoUpdateComment" : true
       },
       "properties" : {
-        "columnsSelector" : [ "drKhTicw872u-XgxTXi_Y$$OxW3oX1sYiB6BiaZyti95##c_tinyint", "drKhTicw872u-XgxTXi_Y$$OxW3oX1sYiB6BiaZyti95##c_smallint", "drKhTicw872u-XgxTXi_Y$$OxW3oX1sYiB6BiaZyti95##c_double" ],
+        "columnsSelector" : [ ],
         "orders" : [ {
           "expression" : {
             "expression" : "c_tinyint"

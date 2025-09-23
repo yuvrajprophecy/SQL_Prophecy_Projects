@@ -27,7 +27,10 @@
         }
       },
       "preview" : [ ],
-      "sources" : [ ]
+      "sources" : [ {
+        "id" : "_vSrbpCqSxQ_Qtfm8A80A",
+        "label" : "S3Source_1"
+      } ]
     }
   },
   "externalSources" : {
