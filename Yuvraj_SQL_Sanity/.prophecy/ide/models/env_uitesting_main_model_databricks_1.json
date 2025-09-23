@@ -727,8 +727,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned",
-        "x" : 700,
-        "y" : -60,
+        "x" : 460,
+        "y" : -80,
         "phase" : 0
       },
       "properties" : {
