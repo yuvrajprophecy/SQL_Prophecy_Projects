@@ -65,11 +65,13 @@
         "runOnlyModel" : "true",
         "loadingModels" : false,
         "fullRefresh" : true,
+        "entityName" : "env_uitesting_main_model_databricks_1",
         "noSendAnonymousUsageStats" : true,
         "profile" : "run_profile",
         "sqlFabricId" : "7",
         "gitEntityValue" : "dev_staging",
         "execDeps" : true,
+        "sqlProjectType" : "databricks",
         "execTest" : false,
         "currentProjectModels" : [ {
           "label" : "env_uitesting_main_model_databricks_2",
