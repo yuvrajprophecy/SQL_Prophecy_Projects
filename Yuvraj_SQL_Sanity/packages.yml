@@ -1,0 +1,8 @@
+---
+packages:
+- revision: "main_staging"
+  git: "https://github.com/abhisheks-prophecy/sql_generic_public_parent_all.git"
+- package: "calogica/dbt_date"
+  version:
+  - ">=0.7.0"
+  - "<0.8.0"
