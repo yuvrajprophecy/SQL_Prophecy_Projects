@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: v3.3.12.0-1
+version: v3.4.0-1
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -119,7 +119,7 @@ sqlModels:
           type: Integer
       - name: c_bigint
         dataType:
-          type: Float
+          type: Double
       - name: c_smallint
         dataType:
           type: SmallInt
@@ -139,7 +139,7 @@ sqlModels:
             type: String
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_struct
         dataType:
           type: Struct
@@ -192,7 +192,7 @@ sqlModels:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -271,7 +271,7 @@ sqlSnapshots:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
