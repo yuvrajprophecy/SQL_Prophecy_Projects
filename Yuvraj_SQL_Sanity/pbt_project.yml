@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: v3.4.2.0-1
+version: v3.4.2.0-2
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -16,7 +16,7 @@ jobs:
     scheduler:
       Databricks: {}
     cloudProvider: null
-    jobSize: null
+    jobSize: prophecy_internal_jobs
     scheduleCron: 0 0 0 1 1 ? *
     timeout: null
     alerting:
@@ -29,7 +29,7 @@ jobs:
       clusterMode:
         Single: {}
       clusterId: null
-    enabled: null
+    enabled: false
     createdAt: '2024-07-31 11:16:26'
     author: abhisheks+e2etests@prophecy.io
     models: []
