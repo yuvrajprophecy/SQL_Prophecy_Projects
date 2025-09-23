@@ -27,36 +27,7 @@
         "onSuccess" : false,
         "onFailure" : false
       }
-    },
-    "availableFabrics" : [ {
-      "id" : "3027",
-      "name" : "TEST-SQL-DB-Automation",
-      "clusterSizes" : {
-        "default" : "prophecy_internal_jobs",
-        "availableClusterSizes" : [ "prophecy_internal_jobs" ]
-      }
-    }, {
-      "id" : "1880",
-      "name" : "sql_databricks",
-      "clusterSizes" : {
-        "default" : "prophecy_internal_jobs",
-        "availableClusterSizes" : [ "prophecy_internal_jobs" ]
-      }
-    }, {
-      "id" : "2128",
-      "name" : "test_yuv_db",
-      "clusterSizes" : {
-        "default" : "prophecy_internal_jobs",
-        "availableClusterSizes" : [ "prophecy_internal_jobs" ]
-      }
-    }, {
-      "id" : "7",
-      "name" : "dev_sql_databricks",
-      "clusterSizes" : {
-        "default" : "prophecy_internal_jobs",
-        "availableClusterSizes" : [ "prophecy_internal_jobs" ]
-      }
-    } ]
+    }
   },
   "processes" : {
     "uAVNA9fv0qTboF28Qz0nU$$NPtur1O-ir49Ic-rvOLlA" : {
@@ -65,7 +36,7 @@
       "metadata" : {
         "label" : "Model_0",
         "slug" : "Model_0",
-        "x" : 240,
+        "x" : 220,
         "y" : 140
       },
       "ports" : {
@@ -79,13 +50,11 @@
         } ]
       },
       "settings" : {
-        "type" : "Inherited",
-        "alerting" : {
-          "emails" : "",
-          "onStart" : false,
-          "onSuccess" : false,
-          "onFailure" : false
-        }
+        "retries" : 0,
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
       },
       "properties" : {
         "execSeed" : true,

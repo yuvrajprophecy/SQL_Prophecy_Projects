@@ -60,8 +60,8 @@
       "metadata" : {
         "label" : "all_type_partitioned",
         "slug" : "all_type_partitioned",
-        "x" : -840,
-        "y" : -260,
+        "x" : -880,
+        "y" : -200,
         "phase" : 0
       },
       "properties" : {

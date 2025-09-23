@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: v3.4.0-2
+version: v3.4.0.0-4
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -331,14 +331,14 @@ sqlSnapshots:
       snapshots: []
     createdAt: '2024-09-16 08:55:54'
 sqlTests:
-  .prophecy/metadata/sqltests/parent_multi_model_not_null:
-    name: parent_multi_model_not_null
+  .prophecy/metadata/sqltests/parent_multi_model_not_null1:
+    name: parent_multi_model_not_null1
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
-    - tests/generic_parent/parent_multi_model_not_null.sql
+    - tests/generic/parent_multi_model_not_null1.sql
     testType: GenericDataTest
-    createdAt: '2024-10-15 06:07:25'
+    createdAt: '2024-10-20 08:21:02'
 sqlMacros:
   .prophecy/metadata/sqlmacros/databricks__language_specific_concat:
     name: databricks__language_specific_concat

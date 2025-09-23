@@ -37,7 +37,6 @@ Reformat_1 AS (
 
 )
 
-{#Creates a snapshot of chronic patients' records for further analysis.#}
 SELECT *
 
 FROM Reformat_1
