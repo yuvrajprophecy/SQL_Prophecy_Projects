@@ -2973,8 +2973,8 @@
       "metadata" : {
         "label" : "env_uitesting_main_model_databricks_2",
         "slug" : "env_uitesting_main_model_databricks_2",
-        "x" : 740,
-        "y" : 120,
+        "x" : 860,
+        "y" : 100,
         "phase" : 0
       },
       "properties" : {
@@ -3027,7 +3027,7 @@
       "metadata" : {
         "label" : "all_type_partitioned_1",
         "x" : 880,
-        "y" : -160,
+        "y" : -280,
         "phase" : 0,
         "macroDependencies" : [ ]
       },

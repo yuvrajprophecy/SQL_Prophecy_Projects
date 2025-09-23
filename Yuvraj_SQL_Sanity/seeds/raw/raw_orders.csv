@@ -14,7 +14,7 @@ id,user_id,order_date,status
 13,84,2018-01-17,completed
 14,40,2018-01-17,returned
 15,25,2018-01-17,completed
-16,39,2018-01-18,completed
+16,39,2018-01-18,completeda
 17,71,2018-01-18,completed
 18,64,2018-01-20,returned
 19,54,2018-01-22,completed

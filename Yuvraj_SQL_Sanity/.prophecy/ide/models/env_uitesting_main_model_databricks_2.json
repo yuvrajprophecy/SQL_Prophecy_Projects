@@ -182,8 +182,8 @@
       "metadata" : {
         "label" : "qa_complex_macro_1",
         "slug" : "qa_complex_macro_1",
-        "x" : -720,
-        "y" : -420,
+        "x" : -520,
+        "y" : -500,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksParentProjectMain.qa_complex_macro" ],
         "comment" : "Validates data integrity for a specific model by checking accepted integer values.",

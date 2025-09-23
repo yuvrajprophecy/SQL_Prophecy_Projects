@@ -100,72 +100,86 @@
           "expression" : {
             "expression" : "c_tinyint"
           },
-          "alias" : "c_tinyint"
+          "alias" : "c_tinyint",
+          "_row_id" : "852867702"
         }, {
           "expression" : {
             "expression" : "c_smallint"
           },
-          "alias" : "c_smallint"
+          "alias" : "c_smallint",
+          "_row_id" : "1923393715"
         }, {
           "expression" : {
             "expression" : "c_int"
           },
-          "alias" : "c_int"
+          "alias" : "c_int",
+          "_row_id" : "1327819568"
         }, {
           "expression" : {
             "expression" : "c_bigint"
           },
-          "alias" : "c_bigint"
+          "alias" : "c_bigint",
+          "_row_id" : "1960993689"
         }, {
           "expression" : {
             "expression" : "c_float"
           },
-          "alias" : "c_float"
+          "alias" : "c_float",
+          "_row_id" : "284553685"
         }, {
           "expression" : {
             "expression" : "c_double"
           },
-          "alias" : "c_double"
+          "alias" : "c_double",
+          "_row_id" : "960542654"
         }, {
           "expression" : {
             "expression" : "c_string"
           },
-          "alias" : "c_string"
+          "alias" : "c_string",
+          "_row_id" : "48655923"
         }, {
           "expression" : {
             "expression" : "c_boolean"
           },
-          "alias" : "c_boolean"
+          "alias" : "c_boolean",
+          "_row_id" : "1714704528"
         }, {
           "expression" : {
             "expression" : "c_array"
           },
-          "alias" : "c_array"
+          "alias" : "c_array",
+          "_row_id" : "1777291965"
         }, {
           "expression" : {
             "expression" : "c_struct"
           },
-          "alias" : "c_struct"
+          "alias" : "c_struct",
+          "_row_id" : "1630702511"
         }, {
           "expression" : {
             "expression" : "p_int"
           },
-          "alias" : "p_int"
+          "alias" : "p_int",
+          "_row_id" : "1575087466"
         }, {
           "expression" : {
             "expression" : "p_string"
           },
-          "alias" : "p_string"
+          "alias" : "p_string",
+          "_row_id" : "1952168714"
         }, {
           "expression" : {
             "expression" : "CURRENT_DATE"
           },
-          "alias" : "c_date"
+          "alias" : "c_date",
+          "_row_id" : "1345592945"
         }, {
           "expression" : {
             "expression" : "monotonically_increasing_id()"
           },
-          "alias" : "c_unique"
+          "alias" : "c_unique",
+          "_row_id" : "1863082400"
         } ]
       },
       "ports" : {
