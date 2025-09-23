@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: v3.3.6.0-2
+version: v3.3.7.0-1
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -21,6 +21,7 @@ functions:
   udafs: {}
   expressions: {}
   airflowFunctions: {}
+  businessRules: {}
 subgraphs: {}
 sqlModels:
   .prophecy/metadata/sqlmodels/env_uitesting_main_model_databricks_1:
