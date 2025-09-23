@@ -657,11 +657,11 @@ MultiColumnRename_1 AS (
         'status', 
         'p_string', 
         'c_boolean', 
-        'c_double', 
         'c_string', 
         'c_float', 
         'c_array', 
-        'c_struct'
+        'c_struct', 
+        'c_double'
       ], 
       'editPrefixSuffix', 
       [

@@ -1363,6 +1363,38 @@
         "relation_name" : [ "Limit_2" ],
         "columnNames" : "c_string",
         "noOfColumns" : 1,
+        "_oldMacroProperties" : {
+          "macroName" : "TextToColumns",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['Limit_2']"
+          }, {
+            "name" : "columnNames",
+            "value" : "c_string"
+          }, {
+            "name" : "delimiter",
+            "value" : "a"
+          }, {
+            "name" : "split_strategy",
+            "value" : "splitColumns"
+          }, {
+            "name" : "noOfColumns",
+            "value" : "1"
+          }, {
+            "name" : "leaveExtraCharLastCol",
+            "value" : "Leave extra in last column"
+          }, {
+            "name" : "splitColumnPrefix",
+            "value" : "root"
+          }, {
+            "name" : "splitColumnSuffix",
+            "value" : "generated"
+          }, {
+            "name" : "splitRowsColumnName",
+            "value" : "generated_column"
+          } ]
+        },
         "splitColumnSuffix" : "generated",
         "splitRowsColumnName" : "generated_column",
         "leaveExtraCharLastCol" : "Leave extra in last column",
@@ -1401,7 +1433,7 @@
       },
       "properties" : {
         "relation_name" : [ "Limit_2" ],
-        "columnNames" : [ "c_tinyint", "c_smallint", "c_int", "c_bigint", "id", "user_id", "order_date", "status", "p_string", "c_boolean", "c_double", "c_string", "c_float", "c_array", "c_struct" ],
+        "columnNames" : [ "c_tinyint", "c_smallint", "c_int", "c_bigint", "id", "user_id", "order_date", "status", "p_string", "c_boolean", "c_string", "c_float", "c_array", "c_struct", "c_double" ],
         "suffix" : "",
         "_oldMacroProperties" : {
           "macroName" : "MultiColumnRename",
@@ -1414,7 +1446,7 @@
             "value" : "[{\"name\": \"c_tinyint\", \"dataType\": \"TinyInt\"}, {\"name\": \"c_smallint\", \"dataType\": \"SmallInt\"}, {\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_bigint\", \"dataType\": \"Bigint\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_double\", \"dataType\": \"Double\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"c_array\", \"dataType\": \"Array\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"p_int\", \"dataType\": \"Integer\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"id\", \"dataType\": \"Integer\"}, {\"name\": \"user_id\", \"dataType\": \"Integer\"}, {\"name\": \"order_date\", \"dataType\": \"Date\"}, {\"name\": \"status\", \"dataType\": \"String\"}]"
           }, {
             "name" : "columnNames",
-            "value" : "[\"c_tinyint\", \"c_smallint\", \"c_int\", \"c_bigint\", \"id\", \"user_id\", \"order_date\", \"status\", \"p_string\", \"c_boolean\", \"c_double\", \"c_string\", \"c_float\", \"c_array\", \"c_struct\"]"
+            "value" : "[\"c_tinyint\", \"c_smallint\", \"c_int\", \"c_bigint\", \"id\", \"user_id\", \"order_date\", \"status\", \"p_string\", \"c_boolean\", \"c_string\", \"c_float\", \"c_array\", \"c_struct\", \"c_double\"]"
           }, {
             "name" : "renameMethod",
             "value" : "editPrefixSuffix"
@@ -1524,8 +1556,8 @@
       "metadata" : {
         "label" : "Limit_2",
         "slug" : "Limit_2",
-        "x" : 1080,
-        "y" : 160,
+        "x" : 800,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -2797,8 +2829,8 @@
       "metadata" : {
         "label" : "parent_transform_deduplicate_1",
         "slug" : "parent_transform_deduplicate_1",
-        "x" : 1440,
-        "y" : 420,
+        "x" : 1640,
+        "y" : 520,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Streamlines and removes duplicates from a dataset for improved data quality."
@@ -2850,7 +2882,16 @@
         "y" : 260,
         "phase" : 0,
         "macroDependencies" : [ ],
-        "comment" : "asd\n  asdasddasd"
+        "comment" : "asd\n  asdasddasd",
+        "dataExplorerProps" : {
+          "filter" : [ {
+            "type" : "simple",
+            "lhs" : "c_int",
+            "operator" : ">",
+            "rhs" : "10"
+          } ],
+          "sort" : [ ]
+        }
       },
       "properties" : {
         "conditions" : [ {
@@ -2974,7 +3015,7 @@
       "metadata" : {
         "label" : "env_uitesting_main_model_databricks_2",
         "slug" : "env_uitesting_main_model_databricks_2",
-        "x" : 860,
+        "x" : 200,
         "y" : 100,
         "phase" : 0
       },
@@ -3000,8 +3041,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_4",
-        "x" : 1240,
-        "y" : 400,
+        "x" : 1380,
+        "y" : 580,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -3101,8 +3142,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_3",
-        "x" : 1120,
-        "y" : 440,
+        "x" : 1180,
+        "y" : 380,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -3129,8 +3170,8 @@
       "metadata" : {
         "label" : "qa_all_not_null_1",
         "slug" : "qa_all_not_null_1",
-        "x" : 1620,
-        "y" : 420,
+        "x" : 1780,
+        "y" : 360,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksParentProjectMain.qa_all_not_null" ],
         "comment" : "Ensures data integrity by checking for non-null values in a specific column of a dataset.",
@@ -3183,6 +3224,12 @@
             "name" : "schema",
             "value" : "[{\"name\": \"pre_c_tinyint\", \"dataType\": \"TinyInt\"}, {\"name\": \"pre_c_smallint\", \"dataType\": \"SmallInt\"}, {\"name\": \"pre_c_int\", \"dataType\": \"Integer\"}, {\"name\": \"pre_c_bigint\", \"dataType\": \"Bigint\"}, {\"name\": \"pre_c_float\", \"dataType\": \"Float\"}, {\"name\": \"pre_c_double\", \"dataType\": \"Double\"}, {\"name\": \"pre_c_string\", \"dataType\": \"String\"}, {\"name\": \"pre_c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"pre_c_array\", \"dataType\": \"Array\"}, {\"name\": \"pre_c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"p_int\", \"dataType\": \"Integer\"}, {\"name\": \"pre_p_string\", \"dataType\": \"String\"}, {\"name\": \"pre_id\", \"dataType\": \"Integer\"}, {\"name\": \"pre_user_id\", \"dataType\": \"Integer\"}, {\"name\": \"pre_order_date\", \"dataType\": \"Date\"}, {\"name\": \"pre_status\", \"dataType\": \"String\"}]"
           }, {
+            "name" : "nameColumn",
+            "value" : "Name"
+          }, {
+            "name" : "valueColumn",
+            "value" : "Value"
+          }, {
             "name" : "keyColumns",
             "value" : "[\"pre_c_int\", \"pre_c_bigint\", \"pre_c_string\", \"pre_c_smallint\", \"pre_c_tinyint\", \"pre_id\"]"
           }, {
@@ -3191,8 +3238,11 @@
           } ]
         },
         "dataColumns" : [ "pre_order_date", "pre_user_id", "pre_p_string", "p_int", "pre_status", "pre_c_struct", "pre_c_array" ],
+        "customNames" : false,
         "schema" : "[{\"name\": \"pre_c_tinyint\", \"dataType\": \"TinyInt\"}, {\"name\": \"pre_c_smallint\", \"dataType\": \"SmallInt\"}, {\"name\": \"pre_c_int\", \"dataType\": \"Integer\"}, {\"name\": \"pre_c_bigint\", \"dataType\": \"Bigint\"}, {\"name\": \"pre_c_float\", \"dataType\": \"Float\"}, {\"name\": \"pre_c_double\", \"dataType\": \"Double\"}, {\"name\": \"pre_c_string\", \"dataType\": \"String\"}, {\"name\": \"pre_c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"pre_c_array\", \"dataType\": \"Array\"}, {\"name\": \"pre_c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"p_int\", \"dataType\": \"Integer\"}, {\"name\": \"pre_p_string\", \"dataType\": \"String\"}, {\"name\": \"pre_id\", \"dataType\": \"Integer\"}, {\"name\": \"pre_user_id\", \"dataType\": \"Integer\"}, {\"name\": \"pre_order_date\", \"dataType\": \"Date\"}, {\"name\": \"pre_status\", \"dataType\": \"String\"}]",
-        "keyColumns" : [ "pre_c_int", "pre_c_bigint", "pre_c_string", "pre_c_smallint", "pre_c_tinyint", "pre_id" ]
+        "valueColumn" : "Value",
+        "keyColumns" : [ "pre_c_int", "pre_c_bigint", "pre_c_string", "pre_c_smallint", "pre_c_tinyint", "pre_id" ],
+        "nameColumn" : "Name"
       },
       "ports" : {
         "inputs" : [ {
@@ -3233,7 +3283,9 @@
         "removeRowNullAllCols" : true,
         "replaceNullTextFields" : true,
         "relation_name" : [ "TextToColumns_1" ],
+        "replaceNullDateWith" : "1970-01-01",
         "columnNames" : [ "c_tinyint", "c_smallint", "c_int", "c_boolean", "c_string", "p_string", "order_date", "id" ],
+        "replaceNullTimeFields" : false,
         "_oldMacroProperties" : {
           "macroName" : "DataCleansing",
           "projectName" : "DatabricksSqlBasics",
@@ -3282,13 +3334,27 @@
           }, {
             "name" : "removeRowNullAllCols",
             "value" : "true"
+          }, {
+            "name" : "replaceNullDateFields",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullDateWith",
+            "value" : "1970-01-01"
+          }, {
+            "name" : "replaceNullTimeFields",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullTimeWith",
+            "value" : "1970-01-01 00:00:00.0"
           } ]
         },
+        "replaceNullTimeWith" : "1970-01-01 00:00:00.0",
         "schema" : "[{\"name\": \"c_tinyint\", \"dataType\": \"TinyInt\"}, {\"name\": \"c_smallint\", \"dataType\": \"SmallInt\"}, {\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_bigint\", \"dataType\": \"Bigint\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_double\", \"dataType\": \"Double\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"c_array\", \"dataType\": \"Array\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"p_int\", \"dataType\": \"Integer\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"id\", \"dataType\": \"Integer\"}, {\"name\": \"user_id\", \"dataType\": \"Integer\"}, {\"name\": \"order_date\", \"dataType\": \"Date\"}, {\"name\": \"status\", \"dataType\": \"String\"}, {\"name\": \"root_1_generated\", \"dataType\": \"String\"}]",
         "allWhiteSpace" : true,
         "removeTabsLineBreaksAndDuplicateWhitespace" : true,
         "modifyCase" : "makeUppercase",
         "cleanPunctuations" : true,
+        "replaceNullDateFields" : false,
         "cleanNumbers" : true,
         "replaceNullNumericWith" : 0
       },
@@ -3452,12 +3518,6 @@
     "target" : "i29jFRkxbfV_1OO9cqbE5$$uWYJxNOoZNjLiJyempqoc",
     "targetPort" : "wJvbiqWeB11he9v6TnNcs$$JCyZxEy4tiAB8M0q6UoHd"
   }, {
-    "id" : "0iQnffN-i9tj-bpoyNv_R",
-    "source" : "AGlhavbtTmqhqRCk-Jiqc$$oKqDNk2iu9AyeRUEK8ls8",
-    "sourcePort" : "0KBg268Jhl3Iy0axitYET$$Ki5s70Vx76LwSXw8OmQK0",
-    "target" : "QFADVQYCvofejUVztLrjL$$1Fdzp5wVvhdBa_Ico22hz",
-    "targetPort" : "s4d6ik_b4mPzCfRrA5tm_$$OnTC2kMC6juPN4LaEsq5x"
-  }, {
     "id" : "5wfWw1Lx3vTGXA7Ff-H2V",
     "source" : "QFADVQYCvofejUVztLrjL$$1Fdzp5wVvhdBa_Ico22hz",
     "sourcePort" : "-3RkCCu32piQXyco11Hib$$CZRlc3Bl-YEXTsecs3hq-",
@@ -3487,6 +3547,12 @@
     "sourcePort" : "ruRs7R5GERzvgjZALItjI$$q528S2_9LNXS3hw7mcEdG",
     "target" : "SQLStatement_2##USku5MrB",
     "targetPort" : "TfhrNw9HFHLZ7bvLEB7w6$$L-xFSIpyCaw723IzlIG9Z"
+  }, {
+    "id" : "UEkuKWMMRZKYVm246ru03",
+    "source" : "AGlhavbtTmqhqRCk-Jiqc$$oKqDNk2iu9AyeRUEK8ls8",
+    "sourcePort" : "0KBg268Jhl3Iy0axitYET$$Ki5s70Vx76LwSXw8OmQK0",
+    "target" : "QFADVQYCvofejUVztLrjL$$1Fdzp5wVvhdBa_Ico22hz",
+    "targetPort" : "s4d6ik_b4mPzCfRrA5tm_$$OnTC2kMC6juPN4LaEsq5x"
   } ],
   "component" : "Model"
 }

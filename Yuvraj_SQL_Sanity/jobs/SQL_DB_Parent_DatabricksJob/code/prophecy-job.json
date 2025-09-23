@@ -117,6 +117,51 @@
       "properties" : {
         "code" : "print(\"hello sir\")"
       }
+    },
+    "pXpOWLiwoKK0jhjHZ4_DY$$fgvnVnikS--hT7B-WTBjT" : {
+      "id" : "pXpOWLiwoKK0jhjHZ4_DY$$fgvnVnikS--hT7B-WTBjT",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Model_1",
+        "slug" : "Model_1",
+        "x" : -220,
+        "y" : -100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "--njht66A1W-N3afF6POc$$5P4hdVFp8eoXgew06N-VP",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "QYtWhqMu6hQJ6_DzkpL42$$rA83tDz713RKplvznmwQF",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        },
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      },
+      "properties" : {
+        "execSeed" : true,
+        "execRun" : false,
+        "gitEntity" : "branch",
+        "projectId" : "",
+        "runOnlyModel" : "false",
+        "loadingModels" : false,
+        "profile" : "run_profile",
+        "gitEntityValue" : "",
+        "execDeps" : false,
+        "execTest" : true,
+        "currentProjectModels" : [ ]
+      }
     }
   },
   "connections" : [ {
