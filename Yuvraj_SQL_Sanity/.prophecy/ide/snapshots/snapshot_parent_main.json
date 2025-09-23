@@ -224,6 +224,26 @@
               "dataType" : {
                 "type" : "Date"
               }
+            }, {
+              "name" : "dbt_scd_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dbt_updated_at",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "dbt_valid_from",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "dbt_valid_to",
+              "dataType" : {
+                "type" : "Date"
+              }
             } ]
           },
           "slug" : "out"
