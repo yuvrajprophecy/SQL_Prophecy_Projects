@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: v3.2.4.0-2
+version: v3.2.5.0-1
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -13,12 +13,14 @@ gemContainer:
   languageVersion: ''
   gemLibsVersion: ''
   gems: {}
+  dependencies: null
 functions:
   author: null
   createdAt: '2023-04-15 08:21:42'
   udfs: {}
   udafs: {}
   expressions: {}
+  airflowFunctions: {}
 subgraphs: {}
 sqlModels:
   .prophecy/metadata/sqlmodels/env_uitesting_can_corrupt:
