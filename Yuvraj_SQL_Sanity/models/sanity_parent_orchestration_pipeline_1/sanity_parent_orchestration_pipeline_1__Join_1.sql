@@ -1,8 +1,8 @@
 {{
   config({    
     "materialized": "ephemeral",
-    "database": "qa_team",
-    "schema": "qa_orchestration"
+    "database": "hive_metastore",
+    "schema": "qa_db_warehouse"
   })
 }}
 
