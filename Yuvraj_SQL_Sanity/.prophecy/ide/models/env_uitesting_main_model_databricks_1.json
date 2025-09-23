@@ -1354,8 +1354,8 @@
       "metadata" : {
         "label" : "SetOperation_1",
         "slug" : "SetOperation_1",
-        "x" : 920,
-        "y" : 440,
+        "x" : 800,
+        "y" : 300,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -2663,8 +2663,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1",
-        "x" : 1040,
-        "y" : 300,
+        "x" : 1000,
+        "y" : 260,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "asd\n  asdasddasd"
@@ -2687,67 +2687,80 @@
           "expression" : {
             "expression" : "all_type_partitioned.p_int"
           },
-          "alias" : "p_int"
+          "alias" : "p_int",
+          "_row_id" : "1375800415"
         }, {
           "expression" : {
             "expression" : "all_type_partitioned.p_string"
           },
-          "alias" : "p_string"
+          "alias" : "p_string",
+          "_row_id" : "1358026043"
         }, {
           "expression" : {
             "expression" : "all_type_non_partitioned.c_string"
           },
-          "alias" : "c_string"
+          "alias" : "c_string",
+          "_row_id" : "946649969"
         }, {
           "expression" : {
             "expression" : "all_type_non_partitioned.c_int"
           },
-          "alias" : "c_int"
+          "alias" : "c_int",
+          "_row_id" : "1078064026"
         }, {
           "expression" : {
             "expression" : "all_type_non_partitioned.c_bigint + spark_catalog.qa_db_warehouse.area(10, 20)"
           },
-          "alias" : "c_bigint"
+          "alias" : "c_bigint",
+          "_row_id" : "1466570708"
         }, {
           "expression" : {
             "expression" : "all_type_non_partitioned.c_smallint"
           },
-          "alias" : "c_smallint"
+          "alias" : "c_smallint",
+          "_row_id" : "617465030"
         }, {
           "expression" : {
             "expression" : "all_type_non_partitioned.c_tinyint"
           },
-          "alias" : "c_tinyint"
+          "alias" : "c_tinyint",
+          "_row_id" : "1147152244"
         }, {
           "expression" : {
             "expression" : "all_type_non_partitioned.c_float"
           },
-          "alias" : "c_float"
+          "alias" : "c_float",
+          "_row_id" : "689478250"
         }, {
           "expression" : {
             "expression" : "all_type_non_partitioned.c_boolean"
           },
-          "alias" : "c_boolean"
+          "alias" : "c_boolean",
+          "_row_id" : "1901144694"
         }, {
           "expression" : {
             "expression" : "all_type_non_partitioned.c_array"
           },
-          "alias" : "c_array"
+          "alias" : "c_array",
+          "_row_id" : "507580814"
         }, {
           "expression" : {
             "expression" : "all_type_non_partitioned.c_double"
           },
-          "alias" : "c_double"
+          "alias" : "c_double",
+          "_row_id" : "1366635456"
         }, {
           "expression" : {
             "expression" : "all_type_non_partitioned.c_struct"
           },
-          "alias" : "c_struct"
+          "alias" : "c_struct",
+          "_row_id" : "1352190574"
         }, {
           "expression" : {
             "expression" : "in2.c_id"
           },
-          "alias" : "c_id"
+          "alias" : "c_id",
+          "_row_id" : "1442085606"
         } ],
         "activeTab" : "conditions",
         "columnsSelector" : [ "f2JPlGzH##c_tinyint", "EeAeHpSM##c_tinyint", "f2JPlGzH##c_smallint", "EeAeHpSM##c_smallint", "EeAeHpSM##c_int", "hlRN0PMN##c_id", "EeAeHpSM##p_int", "EeAeHpSM##p_string", "f2JPlGzH##c_string", "f2JPlGzH##c_int", "f2JPlGzH##c_bigint", "f2JPlGzH##c_smallint", "f2JPlGzH##c_tinyint", "f2JPlGzH##c_float", "f2JPlGzH##c_boolean", "f2JPlGzH##c_array", "f2JPlGzH##c_double", "f2JPlGzH##c_struct", "hlRN0PMN##c_id" ],
