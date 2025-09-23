@@ -1,7 +1,6 @@
 {% set v_expression = 'concat(c_struct.city, c_string)' %}
 {% set v_int = 22 %}
 
-
 WITH all_type_non_partitioned AS (
 
   SELECT * 
